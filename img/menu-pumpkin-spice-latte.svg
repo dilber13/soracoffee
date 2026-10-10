@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="300" viewBox="0 0 240 300">
+  <rect width="240" height="300" fill="#A3442A"/>
+  <g stroke="#F6EBDD" stroke-width="1.5" vector-effect="non-scaling-stroke" stroke-linecap="round">
+    <line vector-effect="non-scaling-stroke" x1="101.0" y1="117.5" x2="15.3" y2="106.2"/>
+    <line vector-effect="non-scaling-stroke" x1="102.3" y1="112.7" x2="22.4" y2="79.6"/>
+    <line vector-effect="non-scaling-stroke" x1="104.8" y1="108.3" x2="36.2" y2="55.7"/>
+    <line vector-effect="non-scaling-stroke" x1="108.3" y1="104.8" x2="55.7" y2="36.2"/>
+    <line vector-effect="non-scaling-stroke" x1="112.7" y1="102.3" x2="79.6" y2="22.4"/>
+    <line vector-effect="non-scaling-stroke" x1="117.5" y1="101.0" x2="106.2" y2="15.3"/>
+    <line vector-effect="non-scaling-stroke" x1="122.5" y1="101.0" x2="133.8" y2="15.3"/>
+    <line vector-effect="non-scaling-stroke" x1="127.3" y1="102.3" x2="160.4" y2="22.4"/>
+    <line vector-effect="non-scaling-stroke" x1="131.7" y1="104.8" x2="184.3" y2="36.2"/>
+    <line vector-effect="non-scaling-stroke" x1="135.2" y1="108.3" x2="203.8" y2="55.7"/>
+    <line vector-effect="non-scaling-stroke" x1="137.7" y1="112.7" x2="217.6" y2="79.6"/>
+    <line vector-effect="non-scaling-stroke" x1="139.0" y1="117.5" x2="224.7" y2="106.2"/>
+  </g>
+  <g transform="translate(52.8 153.6) scale(1.344)">
+  <path d="M25 42H75L70 90Q69 96 63 96H37Q31 96 30 90Z" fill="#F6EBDD"/>
+  <path d="M73 52a11 11 0 0 1 0 24" fill="none" stroke="#F6EBDD" stroke-width="6"/>
+  <rect x="10" y="95" width="80" height="5" rx="2.5" fill="#F6EBDD"/>
+  <path d="M50 26Q62 12 70 18Q64 32 50 26Z" fill="#F6EBDD"/>
+  </g>
+</svg>
