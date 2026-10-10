@@ -117,3 +117,50 @@
   hedefler.forEach(function (el) { io.observe(el); });
   setTimeout(function () { if (!tetiklendi) { io.disconnect(); hepsiniGoster(); } }, 2000);
 })();
+
+/* Telefon/tablet menüsü (1100px altı): tam ekran krem panel. Açıkken sayfanın
+   geri kalanı inert olur, Esc kapatır ve odak düğmeye döner. JS yoksa
+   bağlantılar başlıkta satırlara sarılmış olarak görünür. */
+(function () {
+  var ust = document.querySelector('.ust');
+  var nav = document.getElementById('ana-nav');
+  if (!ust || !nav) return;
+  var kok = document.documentElement;
+  var genis = window.matchMedia('(min-width: 1101px)');
+
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'menu-ac';
+  btn.setAttribute('aria-controls', 'ana-nav');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-label', 'Menüyü aç');
+  btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+    '<g class="ac"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></g>' +
+    '<g class="kapat"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></g></svg>';
+  ust.appendChild(btn);
+
+  var arka = document.querySelectorAll('main, .alt, .eylem-cubugu, .atla');
+
+  function ayarla(acik) {
+    kok.classList.toggle('menu-acik', acik);
+    btn.setAttribute('aria-expanded', String(acik));
+    btn.setAttribute('aria-label', acik ? 'Menüyü kapat' : 'Menüyü aç');
+    arka.forEach(function (el) { el.inert = acik; });
+  }
+
+  btn.addEventListener('click', function () {
+    var acik = !kok.classList.contains('menu-acik');
+    ayarla(acik);
+    if (acik) { var ilk = nav.querySelector('a, button'); if (ilk) ilk.focus(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && kok.classList.contains('menu-acik') && !nav.querySelector('.nav-menu.acik')) {
+      ayarla(false);
+      btn.focus();
+    }
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a') && kok.classList.contains('menu-acik')) ayarla(false);
+  });
+  genis.addEventListener('change', function (e) { if (e.matches) ayarla(false); });
+})();

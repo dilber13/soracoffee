@@ -20,35 +20,38 @@
   --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --font-metin: Figtree, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* Punto ölçeği — masaüstü */
-  --h1: 104px;
+  /* Punto ölçeği — telefon (390px) ile masaüstü (1200px) arası doğrusal:
+     390px'te DESIGN.md'nin telefon değeri, 1200px ve üstünde masaüstü değeri. */
+  --h1: clamp(56px, 56px + 48 * (100vw - 390px) / 810, 104px);
   --h1-satir: 0.95;
   --h1-aralik: -0.01em;
-  --h2: 60px;
+  --h2: clamp(38px, 38px + 22 * (100vw - 390px) / 810, 60px);
   --h2-satir: 1;
-  --h3: 22px;
+  --h3: clamp(20px, 20px + 2 * (100vw - 390px) / 810, 22px);
   --h3-satir: 1.3;
-  --govde: 18px;
+  --govde: clamp(17px, 17px + 1 * (100vw - 390px) / 810, 18px);
   --govde-satir: 1.6;
   --kucuk: 15px;
   --kucuk-satir: 1.4;
-  --rakam: 240px;
+  --rakam: clamp(120px, 120px + 120 * (100vw - 390px) / 810, 240px);
   --rakam-satir: 0.9;
   /* DESIGN.md: 66ch (50–75 harf). Figtree'de 66ch ≈ 95 harf ediyor;
      31em, 18px gövdede satır başına en fazla ~72 harf veriyor (ölçüldü). */
   --olcu: 31em;
 
   /* Boşluk (DESIGN.md › BOŞLUK VE DOKUNMA) */
-  --bolum: 128px;
-  --kenar: 48px;
+  --bolum: clamp(72px, 72px + 56 * (100vw - 390px) / 810, 128px);
+  --kenar: 48px;              /* telefonda 24px — aşağıdaki medya sorgusu */
   --icerik: 1200px;
   --yan: max(var(--kenar), calc((100% - var(--icerik)) / 2));
   --ust-baslik: 72px;
   --dokunma: 48px;
+  --satir-mobil: 56px;
   --dokunma-ara: 8px;
   --buton-boy: 56px;
   --buton-yaricap: 28px;
   --cerit-boy: 420px;
+  --eylem-cubugu: 64px;
   --cerit-ara: 4px;
   --sutun-ara: 24px;
   --sarkma: 64px;
@@ -58,6 +61,10 @@
   --egri: cubic-bezier(0.2, 0, 0, 1);
   --arayuz: 180ms;
   --giris: 350ms;
+}
+
+@media (max-width: 600px) {
+  :root { --kenar: 24px; --sarkma: 24px; }
 }
 
 /* ==========================================================
@@ -186,6 +193,7 @@ a {
   text-decoration-color: var(--karamel);
 }
 a:hover { text-decoration-color: currentColor; }
+a[href^="tel:"] { white-space: nowrap; }
 
 :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 
@@ -725,6 +733,10 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   }
   .buton:active { transform: scale(0.97); }
   .alt-ac svg { transition: transform var(--arayuz) var(--egri); }
+  @media (max-width: 1100px) {
+    html.js .ana-nav { transition: opacity 200ms var(--egri), visibility 0s 200ms; }
+    html.menu-acik .ana-nav { transition: opacity 200ms var(--egri), visibility 0s; }
+  }
 
   /* Açılır menü: opacity + translateY(-6px → 0), 200ms */
   .alt-menu {
@@ -772,4 +784,259 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
 @keyframes kemer-gir {
   from { opacity: 0; transform: scale(1.04); }
   to { opacity: 1; transform: none; }
+}
+
+/* ==========================================================
+   12. Duyarlı — 1100px altı: tam ekran menü
+   ========================================================== */
+.menu-ac { display: none; }
+
+@media (max-width: 1100px) {
+  .marka-alt { display: none; }
+  .ust { grid-template-columns: auto 1fr auto auto; }
+  .ust > .buton { grid-column: 3; justify-self: end; }
+  .menu-ac { grid-column: 4; }
+
+  /* JS yoksa: başlık akışta kalır, bağlantılar satırlara sarılır */
+  html:not(.js) body { padding-top: 0; }
+  html:not(.js) .ust {
+    position: static;
+    height: auto;
+    grid-template-columns: 1fr auto;
+    row-gap: 8px;
+    padding-block: 12px;
+  }
+  html:not(.js) .ana-nav { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
+  html:not(.js) .ana-nav > ul { flex-wrap: wrap; }
+
+  /* JS varken: hamburger + tam ekran krem menü */
+  html.js .menu-ac {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--dokunma);
+    height: var(--dokunma);
+    margin-right: -12px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--espresso);
+    cursor: pointer;
+  }
+  .menu-ac svg { width: 24px; height: 24px; }
+  .menu-ac line { stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+  .menu-ac .kapat { display: none; }
+  html.menu-acik .menu-ac .ac { display: none; }
+  html.menu-acik .menu-ac .kapat { display: inline; }
+
+  html.js .ana-nav {
+    position: fixed;
+    inset: var(--ust-baslik) 0 0 0;
+    z-index: 49;
+    display: flex;
+    flex-direction: column;
+    padding: 8px var(--kenar) 32px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--krem);
+    visibility: hidden;
+    opacity: 0;
+  }
+  html.menu-acik .ana-nav { visibility: visible; opacity: 1; }
+  html.menu-acik body { overflow: hidden; }
+
+  html.js .ana-nav > ul { flex-direction: column; gap: 0; }
+  html.js .ana-nav > ul > li { border-bottom: 1px solid var(--karamel); }
+  html.js .ana-nav > ul > li > a,
+  html.js .alt-ac {
+    width: 100%;
+    min-height: var(--satir-mobil);
+    padding: 0;
+    font-size: var(--h3);
+    justify-content: space-between;
+  }
+  html.js .alt-ac svg { width: 14px; height: 14px; }
+
+  /* Menü satırına dokununca alt kalemler yerinde açılır */
+  html.js .alt-menu {
+    position: static;
+    display: none;
+    min-width: 0;
+    padding: 0 0 12px 16px;
+    background: none;
+    box-shadow: none;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+  html.js .nav-menu.acik .alt-menu { display: block; }
+  html.js .alt-menu a { min-height: var(--dokunma); font-size: var(--govde); }
+
+  /* Menünün altında saat ve adres */
+  html.js .nav-alt {
+    display: block;
+    margin-top: 32px;
+    font-size: var(--kucuk);
+    line-height: var(--kucuk-satir);
+  }
+  html.js .nav-alt p + p { margin-top: 8px; }
+
+  /* Izgaralar: 12 sütun yerine sade düzen */
+  .neden-biz h2 { grid-column: 1 / -1; }
+  .neden-biz p { grid-column: 1 / -1; margin-top: 32px; }
+  .san-sebastian > figure { grid-column: 1 / span 5; }
+  .san-sebastian > div { grid-column: 7 / -1; }
+  .kisa-sss > * { grid-column: 2 / -1; }
+  .sss-sayfa .sss { grid-column: 2 / -1; }
+  .bilgi > * { grid-column: 1 / -1; }
+  .bilgi .harita {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    height: 360px;
+    margin-top: 24px;
+  }
+}
+
+/* ==========================================================
+   13. Duyarlı — telefon (760px altı)
+   ========================================================== */
+@media (max-width: 760px) {
+  /* Alt eylem çubuğu var: üst başlıktaki buton kalkar */
+  .ust > .buton { display: none; }
+  .ust { grid-template-columns: 1fr auto; }
+
+  /* Sabit eylem çubuğu: Ara · Yol Tarifi (%50, ortada) · Instagram */
+  body { padding-bottom: calc(var(--eylem-cubugu) + env(safe-area-inset-bottom)); }
+  .eylem-cubugu {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 45;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: calc(var(--eylem-cubugu) + env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
+    background: var(--krem);
+    border-top: 1px solid var(--karamel);
+  }
+  .eylem-cubugu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: var(--eylem-cubugu);
+    color: var(--espresso);
+    font-size: var(--kucuk);
+    line-height: 1;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .eylem-cubugu svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+  }
+  .eylem-cubugu .eylem-yol {
+    background: var(--terrakota);
+    color: var(--krem);
+  }
+  .eylem-cubugu .eylem-yol:active { background: var(--terrakota-koyu); }
+
+  /* Tek sütun */
+  .hero,
+  .neden-biz,
+  .gece,
+  .san-sebastian,
+  .hakkimizda,
+  .iletisim-giris,
+  .galeri,
+  .kisa-sss,
+  .sss-sayfa,
+  .alt { display: block; }
+
+  /* Hero: foto tam genişlik, kemerin tepesi h1'in altına girer */
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    padding-right: var(--kenar);
+    margin-top: 0;
+  }
+  .hero-metin { display: contents; }
+  .hero h1 { grid-row: 1; margin-right: 0; padding-top: 16px; }
+  .son-kelime { display: inline; }
+  .hero-foto {
+    grid-column: 1;
+    grid-row: 2;
+    margin: -40px calc(-1 * var(--kenar)) 0;
+  }
+  .hero-foto::before { transform: translateY(-14px) scale(0.94); }
+  .hero-alt { grid-row: 3; margin-top: 32px; }
+  .hero .butonlar { grid-row: 4; margin-top: 24px; }
+
+  main { padding-top: 24px; }
+  .adres-seridi { margin-top: 32px; }
+
+  /* Mekan şeridi: dokunmayla yatay kaydırılır, otomatik oynamaz */
+  .mekan-seridi {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--kenar);
+    padding-inline: var(--kenar);
+    gap: var(--cerit-ara);
+  }
+  .mekan-seridi figure { flex: 0 0 78vw; scroll-snap-align: start; }
+  .mekan-seridi img { height: 320px; }
+  .mekan-seridi figcaption { padding-inline: 0; }
+
+  .neden-biz p { margin-top: 24px; }
+
+  /* 02:00 */
+  .gece .dev-rakam { display: inline-block; }
+  .gece > p { margin-top: 24px; }
+  .gece-foto { margin-top: 48px; width: 78%; margin-left: auto; }
+  .isinlar { width: 720px; margin-left: -360px; }
+
+  .san-sebastian > figure { width: 78%; }
+  .san-sebastian > div { padding-bottom: 0; margin-top: 32px; }
+
+  .kisa-sss > p { margin-top: 32px; }
+  .sss dt:not(:first-child) { margin-top: 32px; }
+
+  /* Menü */
+  .kalem {
+    grid-template-columns: 96px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: start;
+  }
+  .kalem img { width: 96px; height: 120px; }
+  .fiyat { grid-column: 2; margin-top: 8px; text-align: right; }
+  .kalemler > li + li { margin-top: 24px; padding-top: 24px; }
+
+  /* Mekan */
+  .galeri-buyuk { margin-bottom: 48px; }
+  .galeri-serit {
+    margin-right: calc(-1 * var(--kenar));
+    padding-right: var(--kenar);
+  }
+  .galeri-serit figure { flex-basis: 70vw; }
+
+  /* Hakkımızda */
+  .portre { margin-top: 40px; width: 85%; }
+  .hk-metin { margin-top: 32px; }
+
+  /* İletişim */
+  .iletisim-giris figure { margin-top: 32px; width: 78%; margin-left: auto; }
+  main > .bilgi + .bilgi { margin-top: 56px; }
+  .bilgi .harita { height: 300px; }
+  main > .bant { padding-block: 64px; }
+
+  .sss-sayfa .sss { margin-top: 40px; }
+
+  /* Alt bilgi */
+  .alt { padding-block: 56px; }
+  .alt > * + * { margin-top: 8px; }
 }
