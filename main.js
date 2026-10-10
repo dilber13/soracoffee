@@ -80,3 +80,40 @@
     if (!li.contains(e.target)) ac(false);
   });
 })();
+
+/* Bölüm başlığı ve ilk görsel ekrana girince bir kez belirir; 02:00 ışınları
+   bir kez doğar. Gizli başlangıç durumu CSS'te yalnızca html.js altında ve
+   prefers-reduced-motion: no-preference içinde. IntersectionObserver yoksa ya
+   da 2 saniye içinde hiç tetiklenmezse her şey görünür yapılır. */
+(function () {
+  var hedefler = [];
+  document.querySelectorAll('main > section:not(.hero):not(.kisa-sss):not(.sss-sayfa)').forEach(function (bolum) {
+    var baslik = bolum.querySelector('h2');
+    var gorsel = null;
+    bolum.querySelectorAll('figure').forEach(function (f) {
+      if (!gorsel && !f.closest('li')) gorsel = f;
+    });
+    [baslik, gorsel].forEach(function (el) {
+      if (el) { el.classList.add('goster'); hedefler.push(el); }
+    });
+  });
+  var isinlar = document.querySelector('.isinlar');
+  if (isinlar) hedefler.push(isinlar);
+
+  function goster(el) {
+    el.classList.add(el === isinlar ? 'dogdu' : 'gorundu');
+  }
+  function hepsiniGoster() { hedefler.forEach(goster); }
+
+  if (!('IntersectionObserver' in window)) { hepsiniGoster(); return; }
+
+  var tetiklendi = false;
+  var io = new IntersectionObserver(function (girdiler) {
+    tetiklendi = true;
+    girdiler.forEach(function (g) {
+      if (g.isIntersecting) { goster(g.target); io.unobserve(g.target); }
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  hedefler.forEach(function (el) { io.observe(el); });
+  setTimeout(function () { if (!tetiklendi) { io.disconnect(); hepsiniGoster(); } }, 2000);
+})();

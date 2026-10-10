@@ -12,6 +12,9 @@
   --karamel: #B08656;
   --karamel-koyu: #8A6235;
   --hardal: #D19A3E;
+  --terrakota-koyu: #8C3A24;   /* hover: terrakotadan bir ton koyu */
+  --krem-koyu: #ECDDCA;        /* hover: kremden bir ton koyu */
+  --golge: 0 8px 24px rgba(42, 28, 19, 0.12); /* yalnızca açılır menü */
 
   /* Karakterler (DESIGN.md › TİPOGRAFİ) */
   --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
@@ -50,6 +53,11 @@
   --sutun-ara: 24px;
   --sarkma: 64px;
   --binme: 40px;
+
+  /* Hareket (DESIGN.md › HAREKET) */
+  --egri: cubic-bezier(0.2, 0, 0, 1);
+  --arayuz: 180ms;
+  --giris: 350ms;
 }
 
 /* ==========================================================
@@ -110,6 +118,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html {
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: calc(var(--ust-baslik) + 24px);
@@ -123,6 +132,7 @@ body {
   line-height: var(--govde-satir);
   font-weight: 400;
   color: var(--espresso);
+  background: var(--krem);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -168,7 +178,14 @@ figcaption,
   line-height: var(--kucuk-satir);
 }
 
-a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+/* Linkler terrakota; üzerine gelince alt çizginin kalınlığı değil rengi değişir */
+a {
+  color: var(--terrakota);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--karamel);
+}
+a:hover { text-decoration-color: currentColor; }
 
 :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 
@@ -179,7 +196,7 @@ a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1p
   z-index: 100;
   padding: 12px 16px;
   font-weight: 600;
-  background: #fff;
+  background: var(--krem);
   transform: translateY(-200%);
 }
 .atla:focus { transform: none; }
@@ -192,10 +209,10 @@ a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1p
   height: 8px;
   margin-right: 8px;
   border-radius: 50%;
-  border: 1.5px solid currentColor;
+  border: 1.5px solid var(--terrakota);
   vertical-align: 0.1em;
 }
-.durum-acik .durum-nokta { background: currentColor; }
+.durum-acik .durum-nokta { background: var(--terrakota); }
 
 /* ==========================================================
    4. Butonlar — 56px, hap, Figtree 600 18px
@@ -214,7 +231,26 @@ a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1p
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
+  cursor: pointer;
 }
+.buton-birincil {
+  background: var(--terrakota);
+  border-color: var(--terrakota);
+  color: var(--krem);
+}
+.buton-birincil:hover { background: var(--terrakota-koyu); border-color: var(--terrakota-koyu); }
+.buton-ikincil {
+  background: transparent;
+  border-color: var(--espresso);
+  color: var(--espresso);
+}
+.buton-ikincil:hover { background: var(--krem-koyu); }
+.buton-krem {
+  background: var(--krem);
+  border-color: var(--krem);
+  color: var(--terrakota);
+}
+.buton-krem:hover { background: var(--krem-koyu); border-color: var(--krem-koyu); }
 .butonlar {
   display: flex;
   flex-wrap: wrap;
@@ -234,9 +270,14 @@ a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1p
   align-items: center;
   column-gap: var(--sutun-ara);
   padding-inline: var(--yan);
-  background: #fff;
+  background: var(--krem);
 }
 .marka {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--dokunma);
+  color: var(--espresso);
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
@@ -244,6 +285,7 @@ a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1p
   white-space: nowrap;
 }
 .marka-alt { white-space: nowrap; }
+.marka-isaret { width: 22px; height: 26px; flex: none; color: var(--karamel); }
 
 .ana-nav { justify-self: end; }
 .ana-nav > ul {
@@ -257,12 +299,16 @@ a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1p
   min-height: var(--dokunma);
   padding: 0 10px;
   font: 600 var(--kucuk) / var(--kucuk-satir) var(--font-metin);
-  color: inherit;
+  color: var(--espresso);
   text-decoration: none;
 }
+.ana-nav a:hover,
+.alt-ac:hover { color: var(--terrakota); }
 .ana-nav a[aria-current="page"],
 .alt-ac[data-gecerli] {
   text-decoration: underline;
+  text-decoration-color: var(--terrakota);
+  text-decoration-thickness: 1.5px;
   text-underline-offset: 0.35em;
 }
 .nav-alt { display: none; }
@@ -284,15 +330,17 @@ a { color: inherit; text-underline-offset: 0.18em; text-decoration-thickness: 1p
   left: 0;
   min-width: 220px;
   padding: 8px;
-  background: #fff;
-  border: 1px solid currentColor;
-  display: none;
+  background: var(--krem);
+  box-shadow: var(--golge);
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
 }
 .alt-menu a { display: flex; width: 100%; }
 /* JS yokken: üzerine gelme / odakla açılır. JS varken yalnızca tıklama. */
 html:not(.js) .nav-menu:hover .alt-menu,
 html:not(.js) .nav-menu:focus-within .alt-menu,
-.nav-menu.acik .alt-menu { display: block; }
+.nav-menu.acik .alt-menu { visibility: visible; opacity: 1; }
 
 /* Mobil eylem çubuğu — telefonda (aşama 4) */
 .eylem-cubugu { display: none; }
@@ -381,9 +429,12 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
 
 /* Ters bölüm: dev 02:00 */
 .gece {
-  align-items: end;
+  align-content: center;
   row-gap: 32px;
 }
+.gece .dev-rakam { align-self: end; }
+.gece > p { align-self: start; }
+.gece-foto { align-self: center; }
 .dev-rakam {
   grid-column: 1 / span 8;
   grid-row: 1;
@@ -465,8 +516,9 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
   gap: 24px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  margin-right: calc(-1 * var(--yan));
-  padding-right: var(--yan);
+  /* sağ kenara kadar taşar: içerik kutusundan pencere kenarına */
+  margin-right: calc(50% - 50vw);
+  padding-right: calc(50vw - 50%);
   padding-bottom: 16px;
 }
 .galeri-serit figure {
@@ -536,6 +588,8 @@ main > .bilgi + .bilgi { margin-top: 80px; }
   column-gap: var(--sutun-ara);
   row-gap: 8px;
   padding: 80px var(--yan);
+  background: var(--espresso);
+  color: var(--krem);
   font-size: var(--kucuk);
   line-height: var(--kucuk-satir);
 }
@@ -550,4 +604,172 @@ main > .bilgi + .bilgi { margin-top: 80px; }
   display: inline-flex;
   align-items: center;
   min-height: var(--dokunma);
+}
+.alt a { color: var(--krem); }
+.alt .durum-nokta { border-color: var(--hardal); }
+.alt .durum-acik .durum-nokta { background: var(--hardal); }
+
+/* ==========================================================
+   8. Bilinçli tek hamle — KEMER
+   Her fotoğraf logodaki pencere gibi: üstü tam yarım daire, altı düz.
+   Dikdörtgen yalnızca kenardan kenara mekan şeridinde.
+   ========================================================== */
+.kemer img,
+img.kemer {
+  border-radius: 999px 999px 0 0;
+}
+
+/* Hero: kemerin arkasında karamel çizgiyle ikinci bir pencere çerçevesi */
+.hero-foto {
+  position: relative;
+  isolation: isolate;
+}
+.hero-foto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 1.5px solid var(--karamel);
+  border-radius: 999px 999px 0 0;
+  transform: translate(-20px, -20px);
+}
+.hero h1 { position: relative; z-index: 2; }
+
+/* Yatay çekilen kareler kemerde dikey kadraja oturur */
+.galeri-serit img,
+.iletisim-giris img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.galeri-serit figure { flex-basis: 300px; }
+.iletisim-giris figure { grid-column: 9 / -1; }
+
+/* Menü kalemleri arasında ince karamel çizgi */
+.kalemler > li + li {
+  padding-top: 40px;
+  border-top: 1px solid var(--karamel);
+}
+.sezonluk .kalem { align-items: center; }
+
+/* ==========================================================
+   9. Ters bölüm — 02:00
+   ========================================================== */
+.gece {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--bolum);
+  background: var(--espresso);
+  color: var(--krem);
+}
+.gece > * { position: relative; z-index: 1; }
+.dev-rakam { color: var(--hardal); }
+.gece > p { color: var(--krem); }
+
+/* Karamel güneş ışınları — 02:00'nin arkasından doğar, bölümün üst kenarından taşar */
+.dev-rakam {
+  position: relative;
+  isolation: isolate;
+  justify-self: start;
+}
+.isinlar {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: 0;
+  width: 1120px;
+  height: auto;
+  margin-left: -560px;
+  color: var(--karamel);
+  pointer-events: none;
+}
+.isinlar line {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+.gece-foto img { position: relative; }
+
+/* ==========================================================
+   10. Terrakota bant — İletişim
+   ========================================================== */
+main > .bant {
+  margin-top: var(--bolum);
+  padding-block: 96px;
+  background: var(--terrakota);
+  color: var(--krem);
+}
+.bant p:first-child {
+  font-size: var(--h3);
+  line-height: var(--h3-satir);
+  font-weight: 600;
+}
+main:has(> .bant:last-child) { padding-bottom: 0; }
+
+/* ==========================================================
+   11. Hareket — yalnızca transform ve opacity; tüm girişler
+   prefers-reduced-motion: no-preference içinde. Gizli başlangıç
+   durumu yalnızca html.js altında (head'deki ilk betik ekler).
+   ========================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  /* Arayüz geri bildirimi: 150–250ms */
+  a { transition: text-decoration-color var(--arayuz) var(--egri); }
+  .ana-nav a,
+  .alt-ac { transition: color 150ms var(--egri); }
+  .buton {
+    transition: background-color var(--arayuz) var(--egri),
+                border-color var(--arayuz) var(--egri),
+                transform var(--arayuz) var(--egri);
+  }
+  .buton:active { transform: scale(0.97); }
+  .alt-ac svg { transition: transform var(--arayuz) var(--egri); }
+
+  /* Açılır menü: opacity + translateY(-6px → 0), 200ms */
+  .alt-menu {
+    transform: translateY(-6px);
+    transition: opacity 200ms var(--egri), transform 200ms var(--egri), visibility 0s 200ms;
+  }
+  html:not(.js) .nav-menu:hover .alt-menu,
+  html:not(.js) .nav-menu:focus-within .alt-menu,
+  .nav-menu.acik .alt-menu {
+    transform: none;
+    transition: opacity 200ms var(--egri), transform 200ms var(--egri), visibility 0s;
+  }
+
+  /* Hero girişi: h1 450ms; kemer foto 500ms, 80ms gecikmeli. Butonlar sabit. */
+  html.js .hero h1 { animation: yukari16 450ms var(--egri) both; }
+  html.js .hero-foto img { animation: kemer-gir 500ms var(--egri) 80ms both; }
+  html.js .hero-foto::before { animation: belir 500ms var(--egri) 80ms both; }
+
+  /* Bölüm başlığı ve ilk görsel ekrana girince bir kez: 350ms */
+  html.js .goster {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity var(--giris) var(--egri), transform var(--giris) var(--egri);
+  }
+  html.js .goster.gorundu { opacity: 1; transform: none; }
+
+  /* İmza an: ışınlar merkezden dışa bir kez doğar. Simetrik çiftler 30ms
+     arayla başlar (0–150ms), her ışın 330ms: toplam 480ms. */
+  html.js .isinlar line { transform: scaleY(0); }
+  html.js .isinlar.dogdu line {
+    transform: scaleY(1);
+    transition: transform 330ms var(--egri);
+    transition-delay: calc(var(--sira) * 30ms);
+  }
+}
+
+@keyframes yukari16 {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes belir {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes kemer-gir {
+  from { opacity: 0; transform: scale(1.04); }
+  to { opacity: 1; transform: none; }
 }
