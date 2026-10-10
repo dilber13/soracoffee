@@ -22,13 +22,14 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
   sayfasında kategori başlıkları. Gövde, buton, etiket, nav, fiyat satırı,
   alt yazı ASLA display değil. Metin öğelerinin en fazla 1/6'sı display.
 - Sayılar (masaüstü / telefon):
-  h1: 104px / 56px — satır yüksekliği 0,95 — harf aralığı -0,01em
+  h1: 104px / 68px — satır yüksekliği 0,95 — harf aralığı -0,01em
+  (telefon değeri 56px'ten 68px'e çıkarıldı: başlık gövdenin en az 4 katı olsun)
   h2: 60px / 38px — satır yüksekliği 1,0
   h3 (Figtree 600): 22px / 20px — satır yüksekliği 1,3
   Gövde: 18px / 17px — satır yüksekliği 1,6
   Alt yazı / etiket: 15px / 15px — satır yüksekliği 1,4
   "02:00" rakamı: 240px / 120px — satır yüksekliği 0,9
-  Oranlar: h1/gövde masaüstünde 5,8×, telefonda 3,3×.
+  Oranlar: h1/gövde masaüstünde 5,8×, telefonda 4,0×.
 - Satır uzunluğu: gövde max-width 66ch (aralık 50–75).
 - Site tek dil (Türkçe). Dil değiştirici yok.
 

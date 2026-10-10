@@ -22,7 +22,7 @@
 
   /* Punto ölçeği — telefon (390px) ile masaüstü (1200px) arası doğrusal:
      390px'te DESIGN.md'nin telefon değeri, 1200px ve üstünde masaüstü değeri. */
-  --h1: clamp(56px, 56px + 48 * (100vw - 390px) / 810, 104px);
+  --h1: clamp(68px, 68px + 36 * (100vw - 390px) / 810, 104px);
   --h1-satir: 0.95;
   --h1-aralik: -0.01em;
   --h2: clamp(38px, 38px + 22 * (100vw - 390px) / 810, 60px);
@@ -293,7 +293,7 @@ a[href^="tel:"] { white-space: nowrap; }
   white-space: nowrap;
 }
 .marka-alt { white-space: nowrap; }
-.marka-isaret { width: 22px; height: 26px; flex: none; color: var(--karamel); }
+.marka-isaret { width: auto; height: 42px; flex: none; }
 
 .ana-nav { justify-self: end; }
 .ana-nav > ul {
