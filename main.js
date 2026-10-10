@@ -38,3 +38,45 @@
   guncelle();
   setInterval(guncelle, 60000);
 })();
+
+/* Menü ▾ açılır alt menüsü: tıklayınca açılır, Esc kapatır, dışarı tıklayınca
+   ya da odak menüden çıkınca kapanır. JS yoksa "Menü" menu.html'e giden bir
+   bağlantı olarak kalır ve alt menü üzerine gelince/odakla görünür. */
+(function () {
+  var li = document.querySelector('.nav-menu');
+  if (!li) return;
+  var link = li.querySelector(':scope > a');
+  var liste = li.querySelector('.alt-menu');
+  if (!link || !liste) return;
+
+  var btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'alt-ac';
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-controls', liste.id);
+  if (link.hasAttribute('aria-current')) btn.setAttribute('data-gecerli', '');
+  btn.innerHTML = link.textContent +
+    '<svg viewBox="0 0 10 10" aria-hidden="true" focusable="false">' +
+    '<path d="M1 3.5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+  li.replaceChild(btn, link);
+
+  function ac(durum) {
+    li.classList.toggle('acik', durum);
+    btn.setAttribute('aria-expanded', String(durum));
+  }
+  btn.addEventListener('click', function () {
+    ac(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  li.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && li.classList.contains('acik')) {
+      ac(false);
+      btn.focus();
+    }
+  });
+  li.addEventListener('focusout', function (e) {
+    if (!li.contains(e.relatedTarget)) ac(false);
+  });
+  document.addEventListener('click', function (e) {
+    if (!li.contains(e.target)) ac(false);
+  });
+})();
