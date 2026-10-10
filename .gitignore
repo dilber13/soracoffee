@@ -1,0 +1,14 @@
+# İşletim sistemi
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editörler
+.vscode/
+.idea/
+*.swp
+*~
+
+# Yerel notlar ve geçici dosyalar
+*.log
+tmp/
