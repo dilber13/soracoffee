@@ -124,6 +124,9 @@
    ========================================================== */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* hidden özelliği, display veren sınıflardan (ör. .buton) her zaman güçlü */
+[hidden] { display: none !important; }
+
 html {
   overflow-x: clip;
   -webkit-text-size-adjust: 100%;
@@ -1043,4 +1046,64 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   /* Alt bilgi */
   .alt { padding-block: 56px; }
   .alt > * + * { margin-top: 8px; }
+}
+
+/* ==========================================================
+   14. Yasal metin sayfası (KVKK) ve istek üzerine yüklenen harita
+   ========================================================== */
+.metin-sayfa {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--sutun-ara);
+}
+.metin-sayfa > * { grid-column: 4 / -1; }
+.metin-sayfa > h1 { grid-column: 1 / -1; }
+.metin-tarih { margin-top: 24px; font-size: var(--kucuk); line-height: var(--kucuk-satir); }
+.metin-sayfa > p:not(.metin-tarih) { margin-top: 48px; }
+.metin-sayfa section { margin-top: 56px; }
+/* Bölüm başlıkları burada kısa etiketler: display değil, Figtree 600 */
+.metin-sayfa h2 {
+  font-family: var(--font-metin);
+  font-size: var(--h3);
+  line-height: var(--h3-satir);
+  font-weight: 600;
+}
+.metin-sayfa h2 + * { margin-top: 16px; }
+.metin-sayfa p + p,
+.metin-sayfa ul + p,
+.metin-sayfa p + ul { margin-top: 16px; }
+.metin-sayfa ul { list-style: disc; padding-left: 1.2em; max-width: var(--olcu); }
+.metin-sayfa li + li { margin-top: 8px; }
+.metin-sayfa li::marker { color: var(--karamel); }
+
+.alt-yasal { margin-top: 16px; }
+
+div.harita {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px;
+  background: var(--krem-koyu);
+}
+div.harita p { font-size: var(--kucuk); line-height: var(--kucuk-satir); }
+.harita-eylem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+}
+.harita-eylem a { display: inline-flex; align-items: center; min-height: var(--dokunma); }
+div.harita iframe { width: 100%; height: 100%; min-height: 360px; border: 0; }
+div.harita.yuklendi { padding: 0; }
+
+@media (max-width: 1100px) {
+  .metin-sayfa > * { grid-column: 2 / -1; }
+}
+@media (max-width: 760px) {
+  .metin-sayfa { display: block; }
+  .metin-sayfa > p:not(.metin-tarih) { margin-top: 32px; }
+  .metin-sayfa section { margin-top: 40px; }
+  div.harita { padding: 24px; }
+  div.harita iframe { min-height: 300px; }
 }

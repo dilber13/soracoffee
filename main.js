@@ -164,3 +164,25 @@
   });
   genis.addEventListener('change', function (e) { if (e.matches) ayarla(false); });
 })();
+
+/* Harita yalnızca istek üzerine: "Haritayı göster"e basılana kadar Google'a
+   bağlanılmaz, çerez bırakılmaz. JS yoksa "Google Haritalar'da aç" bağlantısı kalır. */
+(function () {
+  document.querySelectorAll('[data-harita]').forEach(function (kutu) {
+    var btn = kutu.querySelector('.harita-ac');
+    if (!btn) return;
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = kutu.getAttribute('data-harita');
+      f.title = "Sora Coffee'nin haritadaki yeri";
+      f.loading = 'lazy';
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      kutu.textContent = '';
+      kutu.appendChild(f);
+      kutu.classList.add('yuklendi');
+      f.setAttribute('tabindex', '0');
+      f.focus();
+    });
+  });
+})();
