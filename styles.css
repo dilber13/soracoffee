@@ -458,9 +458,10 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
 }
 
 /* San Sebastian: görsel solda içeriden, metin sağda aşağıda */
-.san-sebastian { align-items: end; }
-.san-sebastian > figure { grid-column: 2 / span 4; }
-.san-sebastian > div { grid-column: 7 / -1; padding-bottom: 48px; }
+.san-sebastian { align-items: center; }
+.san-sebastian > figure { grid-column: 1 / span 6; }
+.san-sebastian img { width: 100%; }
+.san-sebastian > div { grid-column: 8 / -1; }
 .san-sebastian h2 + p { margin-top: 24px; }
 .san-sebastian p + p { margin-top: 24px; }
 
@@ -647,7 +648,6 @@ main > .bilgi + .bilgi { margin-top: 80px; }
   padding-top: 40px;
   border-top: 1px solid var(--karamel);
 }
-.sezonluk .kalem { align-items: center; }
 
 /* ==========================================================
    9. Ters bölüm — 02:00
@@ -868,7 +868,7 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   /* Izgaralar: 12 sütun yerine sade düzen */
   .neden-biz h2 { grid-column: 1 / -1; }
   .neden-metin { grid-column: 1 / -1; margin-top: 32px; }
-  .san-sebastian > figure { grid-column: 1 / span 5; }
+  .san-sebastian > figure { grid-column: 1 / span 6; }
   .san-sebastian > div { grid-column: 7 / -1; }
   .kisa-sss > * { grid-column: 2 / -1; }
   .sss-sayfa .sss { grid-column: 2 / -1; }
@@ -981,7 +981,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .gece-foto { margin-top: 48px; width: 78%; margin-left: auto; }
   .isinlar { width: 720px; margin-left: -360px; }
 
-  .san-sebastian > figure { width: 78%; }
   .san-sebastian > div { padding-bottom: 0; margin-top: 32px; }
 
   .kisa-sss > p { margin-top: 32px; }
@@ -1145,7 +1144,6 @@ div.harita.yuklendi { padding: 0; }
   text-align: right;
   white-space: nowrap;
 }
-.sezonluk .fiyat { line-height: var(--govde-satir); }
 
 @media (max-width: 760px) {
   .one-cikanlar { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }

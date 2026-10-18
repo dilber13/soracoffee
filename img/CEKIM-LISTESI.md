@@ -22,6 +22,7 @@ hero ve büyük kemerler belirgin biçimde daha keskin olur.
 | menu-latte, menu-caramel-macchiato, menu-chai-tea-latte | Menü, öne çıkanlar | Instagram tanıtım görselinden bardak kırpımları |
 | menu-americano | Menü, öne çıkanlar | Instagram tanıtım görselinden bardak kırpımı |
 | yasin-nalbant-portre | Hakkımızda | Yasin Nalbant, motosiklet önünde (göğüs hizası kırpım) |
+| san-sebastian, menu-san-sebastian | Ana Sayfa, Menü | Sahibin San Sebastian fotoğrafı (çikolata soslu dilim) |
 | burak-eren-pancaroglu-portre | Hakkımızda | Burak Eren Pancaroğlu, kale önünde masada (yandaki kişi ve bardak kadraj dışında) |
 
 ## Hâlâ beklenenler
@@ -30,6 +31,4 @@ Telefonla, gün ışığında, flaşsız, HDR kapalı.
 
 | Dosya | Nerede | Ne çekilecek | Oran |
 |---|---|---|---|
-| san-sebastian | Ana Sayfa San Sebastian, Menü | Şu an çizim. Gerçek fotoğraf: San Sebastian dilimi, beyaz tabak, 45°, doğal yan ışık. | dikey 4:5 |
 | teras-aksam (isteğe bağlı) | Ana Sayfa 02:00 bölümü | Teras, akşam / gece, ışıklar yanarken. Gelirse salon-aksam'ın yerine geçer. | dikey 4:5 |
-| menu-pumpkin-spice-latte | Menü | Şu an çizim (Sora bardağı + krema). Gerçek fotoğraf: Pumpkin Spice Latte, yakın plan. | 4:5 (120×150 gösterilir) |
