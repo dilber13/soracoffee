@@ -19,7 +19,6 @@ hero ve büyük kemerler belirgin biçimde daha keskin olur.
 | mekan-teras | Ana Sayfa şerit, Mekan | Dış cephe fotoğrafından teras kırpımı |
 | mekan-giris-tabela | Mekan, İletişim | Dış cephe fotoğrafından "Soracoffee.co" tabelası |
 | mekan-tezgah | Mekan | Tezgah, espresso makinesi, menü panosu |
-| mekan-vitrin | Mekan | Tatlı vitrininin kendisi |
 | salon-aksam | Ana Sayfa 02:00 bölümü | Sıcak ışıklı salon ve LED'li oval ayna |
 | menu-latte, menu-caramel-macchiato, menu-chai-tea-latte | Menü, öne çıkanlar | Instagram tanıtım görselinden bardak kırpımları |
 | menu-americano | Menü, öne çıkanlar | Instagram tanıtım görselinden bardak kırpımı |
