@@ -1189,3 +1189,15 @@ div.harita.yuklendi { padding: 0; }
   .fiyat-listesi td { width: 64px; }
   .fiyat-listesi tbody th { line-height: 1.35; }
 }
+
+/* Vitrine yeni gelen tatlılar: küçük terrakota "Yeni" işareti */
+.yeni {
+  margin-left: 8px;
+  font-size: var(--kucuk);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--terrakota);
+  white-space: nowrap;
+}
+.kalemler + .fiyat-listesi { margin-top: 48px; }
