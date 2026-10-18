@@ -544,11 +544,13 @@ figure figcaption { margin-top: 12px; }
 .portre img { width: 100%; }
 .hk-metin { grid-column: 7 / -1; }
 .hk-metin p + p { margin-top: 24px; }
-.hk-metin .hk-imza {
-  margin-top: 32px;
+/* Terrakota imza satırı (Hakkımızda, İletişim saatleri) */
+.hk-metin .hk-imza,
+.bilgi .imza {
   font-weight: 600;
   color: var(--terrakota);
 }
+.hk-metin .hk-imza { margin-top: 32px; }
 
 /* ---------- İletişim ---------- */
 /* Geniş yatay tabela fotoğrafı başlığın üstünde; kadraj tabelaya (alta) odaklı */
