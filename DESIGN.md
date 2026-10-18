@@ -101,8 +101,8 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
 
 ## HER ŞEY AYNI HİZADA OLMASIN
 - Hero 7/5 asimetrik: solda h1 ve butonlar, sağda dikey dikdörtgen foto
-  sağ kenara kadar taşar (sağ kenar boşluğunu yok sayar). h1'in son kelimesi
-  krem zemin üzerinde fotoğrafın üzerine 40px biner.
+  sağ kenara kadar taşar (sağ kenar boşluğunu yok sayar). h1 fotoğrafa
+  binmez; son kelime satırın içinde kalır (sahibin isteği).
 - Menü sayfasında kategori başlıkları (h2) içerik sütununun 64px solunda,
   kenar boşluğuna sarkar; kalemler normal sütunda.
 - Telefonda: hero fotosu tam genişlik, h1'in hemen altında.
