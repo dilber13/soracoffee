@@ -198,3 +198,5 @@ Kurallar:
 - Soru-cevap (SSS) bölümü ve "Tüm sorular" sayfası sahibin isteğiyle kaldırıldı.
 - Sahibin isteği: "San Sebastian'ı kendimiz yapıyoruz / el yapımı" ifadesi kullanılmaz; yerine "günlük taze tatlılarımız". Menüde San Sebastian diğer tatlılar gibi tablo satırı.
 - Menüde Sıcak İçecekler ve sonrasındaki tablo ara başlıkları görünmez (yalnızca ekran okuyucular için).
+- Display (başlık) fontu sahibin seçimiyle Playfair Display Italic 400 oldu (OFL, yerel woff2); Instrument Serif kaldırıldı.
+- Playfair geniş olduğu için başlık ölçeği küçüldü: h1 88px / 52px, h2 52px / 34px.

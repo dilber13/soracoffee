@@ -17,15 +17,15 @@
   --golge: 0 8px 24px rgba(42, 28, 19, 0.12); /* yalnızca açılır menü */
 
   /* Karakterler (DESIGN.md › TİPOGRAFİ) */
-  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
   --font-metin: Figtree, system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* Punto ölçeği — telefon (390px) ile masaüstü (1200px) arası doğrusal:
      390px'te DESIGN.md'nin telefon değeri, 1200px ve üstünde masaüstü değeri. */
-  --h1: clamp(68px, 68px + 36 * (100vw - 390px) / 810, 104px);
+  --h1: clamp(52px, 52px + 36 * (100vw - 390px) / 810, 88px);   /* Playfair geniş: biraz küçük */
   --h1-satir: 0.95;
   --h1-aralik: -0.01em;
-  --h2: clamp(38px, 38px + 22 * (100vw - 390px) / 810, 60px);
+  --h2: clamp(34px, 34px + 18 * (100vw - 390px) / 810, 52px);
   --h2-satir: 1;
   --h3: clamp(20px, 20px + 2 * (100vw - 390px) / 810, 22px);
   --h3-satir: 1.3;
@@ -85,36 +85,21 @@
   src: url(fonts/figtree-latin-ext.woff2) format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 @font-face {
-  font-family: "Instrument Serif";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(fonts/instrument-serif-latin.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Instrument Serif";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(fonts/instrument-serif-latin-ext.woff2) format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: "Instrument Serif";
+  font-family: "Playfair Display";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url(fonts/instrument-serif-italic-latin.woff2) format("woff2");
+  src: url(fonts/playfair-display-italic-latin.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Instrument Serif";
+  font-family: "Playfair Display";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url(fonts/instrument-serif-italic-latin-ext.woff2) format("woff2");
+  src: url(fonts/playfair-display-italic-latin-ext.woff2) format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
@@ -159,6 +144,7 @@ p, dd, address, figcaption { max-width: var(--olcu); }
 h1, h2 {
   font-family: var(--font-display);
   font-weight: 400;
+  font-style: italic;
   text-wrap: balance;
 }
 h1 {
@@ -594,7 +580,7 @@ main > .bilgi + .bilgi { margin-top: 80px; }
 h1 { color: var(--terrakota); }
 h2 { color: var(--karamel-koyu); }
 h2.etiket,
-.metin-sayfa h2 { color: var(--espresso); }
+.metin-sayfa h2 { color: var(--espresso); font-style: normal; }
 .san-sebastian h2 { color: var(--karamel); }
 
 /* Ana sayfa başlığı iki toprak tonunda: terrakota (5,2:1) ve koyu karamel (4,6:1) */
