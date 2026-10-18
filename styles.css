@@ -489,7 +489,7 @@ figure figcaption { margin-top: 12px; }
   align-items: start;
 }
 .portre img { width: 100%; }
-.hk-metin { grid-column: 7 / -1; }
+.hk-metin { grid-column: 4 / -1; }  /* portreler şimdilik yok */
 .hk-metin p + p { margin-top: 24px; }
 /* Terrakota imza satırı (Hakkımızda, İletişim saatleri) */
 .hk-metin .hk-imza,

@@ -30,3 +30,5 @@ Telefonla, gün ışığında, flaşsız, HDR kapalı.
 
 | Dosya | Nerede | Ne çekilecek | Oran |
 |---|---|---|---|
+
+Not: yasin-nalbant-portre ve burak-eren-pancaroglu-portre dosyaları duruyor ama sahibin isteğiyle şimdilik Hakkımızda'da gösterilmiyor.
