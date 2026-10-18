@@ -196,3 +196,5 @@ Kurallar:
 - 02:00 bölümü ve ışın animasyonu kaldırıldı. Ters (espresso) zemin artık
   San Sebastian bölümünde; link rengi orada hardal (6,6:1).
 - Soru-cevap (SSS) bölümü ve "Tüm sorular" sayfası sahibin isteğiyle kaldırıldı.
+- Sahibin isteği: "San Sebastian'ı kendimiz yapıyoruz / el yapımı" ifadesi kullanılmaz; yerine "günlük taze tatlılarımız". Menüde San Sebastian diğer tatlılar gibi tablo satırı.
+- Menüde Sıcak İçecekler ve sonrasındaki tablo ara başlıkları görünmez (yalnızca ekran okuyucular için).

@@ -1080,3 +1080,5 @@ main > .san-sebastian {
 }
 .san-sebastian a { color: var(--hardal); text-decoration-color: var(--hardal); }
 .san-sebastian a:hover { color: var(--krem); text-decoration-color: var(--krem); }
+/* Ara başlığı gizlenmiş ardışık tablolar arasında daha dar boşluk */
+.fiyat-listesi + .fiyat-listesi:has(> caption.gorunmez) { margin-top: 32px; }
