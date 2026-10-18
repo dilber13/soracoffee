@@ -74,7 +74,7 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
 - Menü: üstte sezonluk (Pumpkin Spice Latte) vurgusu, sonra kategoriler.
   Fiyat yerine "Fiyat için sorunuz", sağa hizalı, Figtree 400.
 - Mekan: büyük kemerli foto + şerit galeri, her foto alt yazılı.
-- Hakkımızda: Yasin Nalbant portresi + metin. Barista alanı boş bırakılmaz;
+- Hakkımızda: kurucu ortaklar Yasin Nalbant ve Burak Eren Pancaroğlu'nun portreleri + metin. Barista alanı boş bırakılmaz;
   isimler gelene kadar bu blok yayında yok.
 - İletişim: adres metin olarak, gömülü harita, saatler cümle olarak, telefon.
 - Her sayfada aynı footer: ad, adres, telefon, saatler, Instagram.

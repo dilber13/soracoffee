@@ -545,7 +545,15 @@ figure figcaption { margin-top: 12px; }
 /* ---------- Hakkımızda ---------- */
 .hakkimizda { row-gap: 64px; align-items: start; }
 .hakkimizda h1 { grid-column: 1 / -1; }
-.portre { grid-column: 1 / span 5; }
+.portreler {
+  grid-column: 1 / span 6;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sutun-ara);
+  align-items: start;
+}
+.portreler .portre:nth-child(2) { margin-top: 64px; }  /* ikinci kemer biraz aşağıda: yan yana iki pencere */
+.portre img { width: 100%; }
 .hk-metin { grid-column: 7 / -1; }
 .hk-metin p + p { margin-top: 24px; }
 
@@ -1032,7 +1040,8 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .galeri-serit figure { flex-basis: 70vw; }
 
   /* Hakkımızda */
-  .portre { margin-top: 40px; width: 85%; }
+  .portreler { margin-top: 40px; gap: 16px; }
+  .portreler .portre:nth-child(2) { margin-top: 40px; }
   .hk-metin { margin-top: 32px; }
 
   /* İletişim */
