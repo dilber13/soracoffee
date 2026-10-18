@@ -533,17 +533,13 @@ figure figcaption { margin-top: 12px; }
 /* ---------- Hakkımızda ---------- */
 .hakkimizda { row-gap: 64px; align-items: start; }
 .hakkimizda h1 { grid-column: 1 / -1; }
+/* Kurucu portreleri alt alta */
 .portreler {
-  grid-column: 1 / span 6;
+  grid-column: 1 / span 5;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--sutun-ara);
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 48px;
   align-items: start;
-}
-.portreler .portre:nth-child(2) { margin-top: 64px; }  /* ikinci portre biraz aşağıda */
-/* Uzun metin boyunca portreler metnin yanında kalır (yalnızca geniş ekranda) */
-@media (min-width: 761px) {
-  .portreler { position: sticky; top: calc(var(--ust-baslik) + 32px); }
 }
 .portre img { width: 100%; }
 .hk-metin { grid-column: 7 / -1; }
@@ -555,9 +551,9 @@ figure figcaption { margin-top: 12px; }
 }
 
 /* ---------- İletişim ---------- */
-.iletisim-giris { align-items: end; }
-.iletisim-giris h1 { grid-column: 1 / span 6; }
-.iletisim-giris figure { grid-column: 8 / -1; }
+/* Geniş yatay tabela fotoğrafı başlığın üstünde; kadraj tabelaya (alta) odaklı */
+.iletisim-giris figure { grid-column: 1 / -1; grid-row: 1; }
+.iletisim-giris h1 { grid-column: 1 / -1; grid-row: 2; margin-top: 56px; }
 
 .bilgi {
   display: grid;
@@ -637,13 +633,12 @@ main > .bilgi + .bilgi { margin-top: 80px; }
 .hero-foto { overflow: hidden; }
 .hero h1 { position: relative; z-index: 2; }
 
-/* Yatay çekilen kareler dikey kadraja oturur */
 .iletisim-giris img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 12 / 5;
   object-fit: cover;
+  object-position: 50% 80%;
 }
-.iletisim-giris figure { grid-column: 9 / -1; }
 
 /* Menü kalemleri arasında ince karamel çizgi */
 .kalemler > li + li {
@@ -1005,12 +1000,13 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .mekan-kareler { gap: 12px; margin-top: 12px; }
 
   /* Hakkımızda */
-  .portreler { margin-top: 40px; gap: 16px; }
-  .portreler .portre:nth-child(2) { margin-top: 40px; }
+  .portreler { margin-top: 40px; row-gap: 32px; }
   .hk-metin { margin-top: 32px; }
 
   /* İletişim */
-  .iletisim-giris figure { margin-top: 32px; width: 78%; margin-left: auto; }
+  .iletisim-giris figure { margin-inline: calc(-1 * var(--kenar)); }
+  .iletisim-giris img { aspect-ratio: 4 / 3; }
+  .iletisim-giris h1 { margin-top: 32px; }
   main > .bilgi + .bilgi { margin-top: 56px; }
   .bilgi .harita { height: 300px; }
   main > .bant { padding-block: 64px; }
