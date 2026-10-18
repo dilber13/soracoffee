@@ -97,11 +97,9 @@
       if (el) { el.classList.add('goster'); hedefler.push(el); }
     });
   });
-  var isinlar = document.querySelector('.isinlar');
-  if (isinlar) hedefler.push(isinlar);
 
   function goster(el) {
-    el.classList.add(el === isinlar ? 'dogdu' : 'gorundu');
+    el.classList.add('gorundu');
   }
   function hepsiniGoster() { hedefler.forEach(goster); }
 
