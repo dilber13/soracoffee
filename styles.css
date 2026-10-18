@@ -541,9 +541,18 @@ figure figcaption { margin-top: 12px; }
   align-items: start;
 }
 .portreler .portre:nth-child(2) { margin-top: 64px; }  /* ikinci portre biraz aşağıda */
+/* Uzun metin boyunca portreler metnin yanında kalır (yalnızca geniş ekranda) */
+@media (min-width: 761px) {
+  .portreler { position: sticky; top: calc(var(--ust-baslik) + 32px); }
+}
 .portre img { width: 100%; }
 .hk-metin { grid-column: 7 / -1; }
 .hk-metin p + p { margin-top: 24px; }
+.hk-metin .hk-imza {
+  margin-top: 32px;
+  font-weight: 600;
+  color: var(--terrakota);
+}
 
 /* ---------- İletişim ---------- */
 .iletisim-giris { align-items: end; }
