@@ -440,21 +440,6 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
 .san-sebastian h2 + p { margin-top: 24px; }
 .san-sebastian p + p { margin-top: 24px; }
 
-/* SSS */
-.sss dt {
-  font-size: var(--h3);
-  line-height: var(--h3-satir);
-  font-weight: 600;
-}
-.sss dt:not(:first-child) { margin-top: 40px; }
-.sss dd { margin-top: 8px; }
-.kisa-sss {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: var(--sutun-ara);
-}
-.kisa-sss > * { grid-column: 4 / -1; }
-.kisa-sss > p { margin-top: 40px; }
 
 /* Çağrı */
 .cagri p { margin-top: 24px; }
@@ -564,14 +549,6 @@ main > .bilgi + .bilgi { margin-top: 80px; }
 }
 .bant p + p { margin-top: 24px; }
 
-/* ---------- SSS sayfası ---------- */
-.sss-sayfa {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: var(--sutun-ara);
-}
-.sss-sayfa h1 { grid-column: 1 / -1; }
-.sss-sayfa .sss { grid-column: 4 / -1; margin-top: 64px; }
 
 /* ==========================================================
    7. Alt bilgi
@@ -812,8 +789,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .neden-metin { grid-column: 1 / -1; margin-top: 32px; }
   .san-sebastian > figure { grid-column: 1 / span 6; }
   .san-sebastian > div { grid-column: 7 / -1; }
-  .kisa-sss > * { grid-column: 2 / -1; }
-  .sss-sayfa .sss { grid-column: 2 / -1; }
   .bilgi > * { grid-column: 1 / -1; }
   .bilgi .harita {
     grid-column: 1 / -1;
@@ -877,8 +852,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .san-sebastian,
   .hakkimizda,
   .iletisim-giris,
-  .kisa-sss,
-  .sss-sayfa,
   .alt { display: block; }
 
   /* Hero: foto tam genişlik, başlık ve metnin altında */
@@ -919,8 +892,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
 
   .san-sebastian > div { padding-bottom: 0; margin-top: 32px; }
 
-  .kisa-sss > p { margin-top: 32px; }
-  .sss dt:not(:first-child) { margin-top: 32px; }
 
   /* Menü */
   .kalem {
@@ -948,7 +919,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .bilgi .harita { height: 300px; }
   main > .bant { padding-block: 64px; }
 
-  .sss-sayfa .sss { margin-top: 40px; }
 
   /* Alt bilgi */
   .alt { padding-block: 56px; }
