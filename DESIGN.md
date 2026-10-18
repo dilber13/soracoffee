@@ -69,7 +69,7 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
 
 ## SAYFALAR (sıra)
 - Ana Sayfa: Hero → açık/kapalı + adres şeridi → kenardan kenara mekan
-  şeridi → "Neden biz" → ters bölüm (02:00) → San Sebastian vurgusu →
+  şeridi → "Neden biz" → San Sebastian vurgusu (ters: espresso zemin) →
   kısa SSS (4 soru) → iletişim şeridi → footer.
 - Menü: kategoriler; Pumpkin Spice Özel Kahveler tablosunda (ayrı sezonluk
   bölüm yok, sahibin isteği).
@@ -191,3 +191,7 @@ Kurallar:
 - Kelimeler: "premium", "butik", "Keşfet", "Yükselt", "Kusursuz",
   "Dönüştür", "tek adresiniz".
 - Gölge yalnızca açılır menüde: 0 8px 24px rgba(42,28,19,0.12). Başka yerde yok.
+
+## GÜNCELLEME (sahibin kararı)
+- 02:00 bölümü ve ışın animasyonu kaldırıldı. Ters (espresso) zemin artık
+  San Sebastian bölümünde; link rengi orada hardal (6,6:1).

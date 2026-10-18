@@ -368,7 +368,6 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
 .izgara,
 .hero,
 .neden-biz,
-.gece,
 .san-sebastian,
 .hakkimizda,
 .iletisim-giris {
@@ -432,30 +431,6 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
 .neden-metin p + p,
 .mekan-giris p + p { margin-top: 16px; }
 
-/* Ters bölüm: dev 02:00 */
-.gece {
-  align-content: center;
-  row-gap: 32px;
-}
-.gece .dev-rakam { align-self: end; }
-.gece > p { align-self: start; }
-.gece-foto { align-self: center; }
-.dev-rakam {
-  grid-column: 1 / span 8;
-  grid-row: 1;
-  font-size: var(--rakam);
-  line-height: var(--rakam-satir);
-  letter-spacing: -0.02em;
-}
-.gece > p {
-  grid-column: 1 / span 6;
-  grid-row: 2;
-  font-size: var(--govde);
-}
-.gece-foto {
-  grid-column: 9 / -1;
-  grid-row: 1 / span 2;
-}
 
 /* San Sebastian: görsel solda içeriden, metin sağda aşağıda */
 .san-sebastian { align-items: center; }
@@ -652,45 +627,7 @@ main > .bilgi + .bilgi { margin-top: 80px; }
   border-top: 1px solid var(--karamel);
 }
 
-/* ==========================================================
-   9. Ters bölüm — 02:00
-   ========================================================== */
-.gece {
-  position: relative;
-  overflow: hidden;
-  padding-block: var(--bolum);
-  background: var(--espresso);
-  color: var(--krem);
-}
-.gece > * { position: relative; z-index: 1; }
-.dev-rakam { color: var(--hardal); }
-.gece > p { color: var(--krem); }
 
-/* Karamel güneş ışınları — 02:00'nin arkasından doğar, bölümün üst kenarından taşar */
-.dev-rakam {
-  position: relative;
-  isolation: isolate;
-  justify-self: start;
-}
-.isinlar {
-  position: absolute;
-  z-index: -1;
-  left: 50%;
-  bottom: 0;
-  width: 1120px;
-  height: auto;
-  margin-left: -560px;
-  color: var(--karamel);
-  pointer-events: none;
-}
-.isinlar line {
-  stroke: currentColor;
-  stroke-width: 1.5;
-  vector-effect: non-scaling-stroke;
-  transform-box: fill-box;
-  transform-origin: bottom;
-}
-.gece-foto img { position: relative; }
 
 /* ==========================================================
    10. Terrakota bant — İletişim
@@ -754,14 +691,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   }
   html.js .goster.gorundu { opacity: 1; transform: none; }
 
-  /* İmza an: ışınlar merkezden dışa bir kez doğar. Simetrik çiftler 30ms
-     arayla başlar (0–150ms), her ışın 330ms: toplam 480ms. */
-  html.js .isinlar line { transform: scaleY(0); }
-  html.js .isinlar.dogdu line {
-    transform: scaleY(1);
-    transition: transform 330ms var(--egri);
-    transition-delay: calc(var(--sira) * 30ms);
-  }
 }
 
 @keyframes yukari16 {
@@ -935,7 +864,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   /* Tek sütun */
   .hero,
   .neden-biz,
-  .gece,
   .san-sebastian,
   .hakkimizda,
   .iletisim-giris,
@@ -978,11 +906,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
 
   .neden-metin { margin-top: 24px; }
 
-  /* 02:00 */
-  .gece .dev-rakam { display: inline-block; }
-  .gece > p { margin-top: 24px; }
-  .gece-foto { margin-top: 48px; width: 78%; margin-left: auto; }
-  .isinlar { width: 720px; margin-left: -360px; }
 
   .san-sebastian > div { padding-bottom: 0; margin-top: 32px; }
 
@@ -1168,3 +1091,12 @@ div.harita.yuklendi { padding: 0; }
 
 /* Alt bilgide slogan */
 .alt-slogan { margin-bottom: 8px; }
+
+/* San Sebastian: koyu espresso bant (eski 02:00 bölümünün tonu) */
+main > .san-sebastian {
+  padding-block: var(--bolum);
+  background: var(--espresso);
+  color: var(--krem);
+}
+.san-sebastian a { color: var(--hardal); text-decoration-color: var(--hardal); }
+.san-sebastian a:hover { color: var(--krem); text-decoration-color: var(--krem); }
