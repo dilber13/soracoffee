@@ -635,6 +635,9 @@ main > .bilgi + .bilgi { margin-top: 80px; }
 /* Giriş animasyonundaki 1,04 ölçek fotoğraf kutusundan taşmasın */
 .hero-foto { overflow: hidden; }
 .hero h1 { position: relative; z-index: 2; }
+/* Ana sayfa başlığı iki toprak tonunda: terrakota (5,2:1) ve koyu karamel (4,6:1) */
+.hero h1 .h1-ilk { color: var(--terrakota); }
+.hero h1 .h1-ikinci { color: var(--karamel-koyu); }
 
 .iletisim-giris img {
   width: 100%;
