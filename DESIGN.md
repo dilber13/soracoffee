@@ -62,8 +62,8 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
   içeriği örtmemesi için body'ye alt dolgu ver.
 - Masaüstünde: üst başlık sabit (72px), sağda "Yol tarifi al" butonu hep orada.
 - Navigasyon: Ana Sayfa · Menü ▾ · Mekan · Hakkımızda · İletişim.
-  "Menü" açılır alt menüsü: Sıcak Kahveler, Soğuk Kahveler, Tatlılar,
-  Sezonluk. Masaüstünde tıklayınca açılır (sadece hover değil), klavyeyle
+  "Menü" açılır alt menüsü: Sıcak Kahveler, Özel Kahveler, Soğuk İçecekler,
+  Tatlılar. Masaüstünde tıklayınca açılır (sadece hover değil), klavyeyle
   gezilebilir. Telefonda tam ekran krem menü, her satır 56px, Menü satırına
   dokununca alt kalemler yerinde açılır. Menünün altında saat ve adres yazar.
 
@@ -71,7 +71,8 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
 - Ana Sayfa: Hero → açık/kapalı + adres şeridi → kenardan kenara mekan
   şeridi → "Neden biz" → ters bölüm (02:00) → San Sebastian vurgusu →
   kısa SSS (4 soru) → iletişim şeridi → footer.
-- Menü: üstte sezonluk (Pumpkin Spice Latte) vurgusu, sonra kategoriler.
+- Menü: kategoriler; Pumpkin Spice Özel Kahveler tablosunda (ayrı sezonluk
+  bölüm yok, sahibin isteği).
   Fiyat yerine "Fiyat için sorunuz", sağa hizalı, Figtree 400.
 - Mekan: kenardan kenara dikdörtgen bant (uzun masa) + altında 2×2 kare
   ızgara (cam kenarı, teras, tezgah, giriş). Alt yazı yok.
