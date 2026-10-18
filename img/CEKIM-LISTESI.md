@@ -30,7 +30,6 @@ Telefonla, gün ışığında, flaşsız, HDR kapalı.
 
 | Dosya | Nerede | Ne çekilecek | Oran |
 |---|---|---|---|
-| san-sebastian | Ana Sayfa San Sebastian | San Sebastian dilimi, beyaz tabak, beyaz masa, 45°, doğal yan ışık. | dikey 4:5 |
+| san-sebastian | Ana Sayfa San Sebastian, Menü | Şu an çizim. Gerçek fotoğraf: San Sebastian dilimi, beyaz tabak, 45°, doğal yan ışık. | dikey 4:5 |
 | teras-aksam (isteğe bağlı) | Ana Sayfa 02:00 bölümü | Teras, akşam / gece, ışıklar yanarken. Gelirse salon-aksam'ın yerine geçer. | dikey 4:5 |
-| menu-pumpkin-spice-latte | Menü | Pumpkin Spice Latte, yakın plan. | 4:5 (120×150 gösterilir) |
-| menu-san-sebastian | Menü | San Sebastian dilimi (yukarıdaki çekimden kırpılabilir). | 4:5 |
+| menu-pumpkin-spice-latte | Menü | Şu an çizim (Sora bardağı + krema). Gerçek fotoğraf: Pumpkin Spice Latte, yakın plan. | 4:5 (120×150 gösterilir) |
