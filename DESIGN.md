@@ -73,7 +73,10 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
   kısa SSS (4 soru) → iletişim şeridi → footer.
 - Menü: üstte sezonluk (Pumpkin Spice Latte) vurgusu, sonra kategoriler.
   Fiyat yerine "Fiyat için sorunuz", sağa hizalı, Figtree 400.
-- Mekan: büyük kemerli foto + şerit galeri, her foto alt yazılı.
+- Mekan: kenardan kenara dikdörtgen bant (uzun masa) + altında 2×2 kare
+  ızgara (cam kenarı, teras, tezgah, giriş). Alt yazı yok. Bu sayfada
+  fotoğraflar bilerek kemer değil, dikdörtgen ve kare (sahibin isteği).
+  Vitrin fotoğrafı sitenin hiçbir yerinde kullanılmaz.
 - Hakkımızda: kurucu ortaklar Yasin Nalbant ve Burak Eren Pancaroğlu'nun portreleri + metin. Barista alanı boş bırakılmaz;
   isimler gelene kadar bu blok yayında yok.
 - İletişim: adres metin olarak, gömülü harita, saatler cümle olarak, telefon.

@@ -372,8 +372,7 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
 .gece,
 .san-sebastian,
 .hakkimizda,
-.iletisim-giris,
-.galeri {
+.iletisim-giris {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--sutun-ara);
@@ -522,24 +521,23 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
   font-weight: 400;
 }
 
-/* ---------- Mekan ---------- */
-.galeri { row-gap: 64px; }
-.galeri-buyuk { grid-column: 3 / span 6; }
-.galeri-serit {
-  grid-column: 1 / -1;
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  /* sağ kenara kadar taşar: içerik kutusundan pencere kenarına */
-  margin-right: calc(50% - 50vw);
-  padding-right: calc(50vw - 50%);
-  padding-bottom: 16px;
+/* ---------- Mekan: kenardan kenara bant + 2×2 kareler, alt yazısız ----------
+   Bu sayfada fotoğraflar bilerek kemer değil, dikdörtgen ve kare. */
+.mekan-galeri { padding-inline: 0; }
+.mekan-galeri img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
 }
-.galeri-serit figure {
-  flex: 0 0 380px;
-  scroll-snap-align: start;
+.mekan-bant { height: 560px; }
+.mekan-kareler {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sutun-ara);
+  margin-top: var(--sutun-ara);
+  padding-inline: var(--yan);
 }
+.mekan-kareler img { aspect-ratio: 1 / 1; }
 figure figcaption { margin-top: 12px; }
 
 /* ---------- Hakkımızda ---------- */
@@ -659,13 +657,11 @@ img.kemer {
 .hero h1 { position: relative; z-index: 2; }
 
 /* Yatay çekilen kareler kemerde dikey kadraja oturur */
-.galeri-serit img,
 .iletisim-giris img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
-.galeri-serit figure { flex-basis: 300px; }
 .iletisim-giris figure { grid-column: 9 / -1; }
 
 /* Menü kalemleri arasında ince karamel çizgi */
@@ -967,7 +963,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .san-sebastian,
   .hakkimizda,
   .iletisim-giris,
-  .galeri,
   .kisa-sss,
   .sss-sayfa,
   .alt { display: block; }
@@ -1032,12 +1027,8 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .kalemler > li + li { margin-top: 24px; padding-top: 24px; }
 
   /* Mekan */
-  .galeri-buyuk { margin-bottom: 48px; }
-  .galeri-serit {
-    margin-right: calc(-1 * var(--kenar));
-    padding-right: var(--kenar);
-  }
-  .galeri-serit figure { flex-basis: 70vw; }
+  .mekan-bant { height: 300px; }
+  .mekan-kareler { gap: 12px; margin-top: 12px; }
 
   /* Hakkımızda */
   .portreler { margin-top: 40px; gap: 16px; }
