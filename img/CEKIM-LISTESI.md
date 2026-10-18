@@ -21,6 +21,8 @@ hero ve büyük kemerler belirgin biçimde daha keskin olur.
 | mekan-tezgah | Mekan | Tezgah, espresso makinesi, menü panosu |
 | mekan-vitrin | Mekan | Tezgah fotoğrafından vitrin kırpımı |
 | salon-aksam | Ana Sayfa 02:00 bölümü | Sıcak ışıklı salon ve LED'li oval ayna |
+| menu-latte, menu-caramel-macchiato, menu-chai-tea-latte | Menü, öne çıkanlar | Instagram tanıtım görselinden bardak kırpımları |
+| menu-americano | Menü, öne çıkanlar | Instagram tanıtım görselinden bardak kırpımı |
 
 ## Hâlâ beklenenler
 
@@ -33,8 +35,6 @@ Telefonla, gün ışığında, flaşsız, HDR kapalı.
 | teras-aksam (isteğe bağlı) | Ana Sayfa 02:00 bölümü | Teras, akşam / gece, ışıklar yanarken. Gelirse salon-aksam'ın yerine geçer. | dikey 4:5 |
 | mekan-vitrin (daha iyisi) | Mekan | Vitrinin kendisi, yakından: San Sebastian ve günün tatlıları. | dikey 4:5 |
 | menu-pumpkin-spice-latte | Menü | Pumpkin Spice Latte, yakın plan. | 4:5 (120×150 gösterilir) |
-| menu-buzlu-latte | Menü | Buzlu içecek, logolu bardak, terakota duvar önünde. | 4:5 |
-| menu-buzlu-americano | Menü | Buzlu Americano, yakın plan. | 4:5 |
 | menu-san-sebastian | Menü | San Sebastian dilimi (yukarıdaki çekimden kırpılabilir). | 4:5 |
 | menu-dilim-pasta | Menü | Fıstıklı ve çikolatalı dilim pastalar. | 4:5 |
 | menu-kupta-tatli | Menü | Kupta katmanlı tatlı. | 4:5 |

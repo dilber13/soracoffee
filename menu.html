@@ -5,7 +5,7 @@
   <script>document.documentElement.classList.add('js')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Menü | Sora Coffee Bucak · Kahve, Soğuk Kahve, Tatlı</title>
-  <meta name="description" content="Sora Coffee Bucak menüsü: sıcak ve soğuk kahveler, el yapımı San Sebastian, taze tatlılar ve sezonluk Pumpkin Spice Latte.">
+  <meta name="description" content="Sora Coffee Bucak menüsü ve fiyatları: espresso bazlı kahveler, özel kahveler, sıcak ve soğuk içecekler, kokteyller, el yapımı San Sebastian ve sezonluk Pumpkin Spice Latte.">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -70,7 +70,8 @@
           <a href="menu.html" aria-current="page">Menü</a>
           <ul class="alt-menu" id="alt-menu">
             <li><a href="menu.html#sicak-kahveler">Sıcak Kahveler</a></li>
-            <li><a href="menu.html#soguk-kahveler">Soğuk Kahveler</a></li>
+            <li><a href="menu.html#ozel-kahveler">Özel Kahveler</a></li>
+            <li><a href="menu.html#soguk-icecekler">Soğuk İçecekler</a></li>
             <li><a href="menu.html#tatlilar">Tatlılar</a></li>
             <li><a href="menu.html#sezonluk">Sezonluk</a></li>
           </ul>
@@ -91,7 +92,7 @@
   <main id="icerik">
     <section class="menu-giris" aria-labelledby="menu-baslik">
       <h1 id="menu-baslik">Menü</h1>
-      <p>Tezgahta sizin için hazırlanan sıcak ve soğuk kahveler, kendi mutfağımızdan çıkan San Sebastian, her gün taze gelen tatlılar ve mevsimin içecekleri. Fiyatları tezgahta sorabilir ya da bizi arayabilirsiniz.</p>
+      <p>Tezgahta sizin için hazırlanan sıcak ve soğuk kahveler, kendi mutfağımızdan çıkan San Sebastian, her gün taze gelen tatlılar ve mevsimin içecekleri. Tatlı fiyatlarını tezgahta sorabilir ya da bizi arayabilirsiniz.</p>
     </section>
 
     <section class="kategori sezonluk" id="sezonluk" aria-labelledby="sezonluk-baslik">
@@ -103,36 +104,130 @@
             <h3>Pumpkin Spice Latte</h3>
             <p>Balkabağı, tarçın, süt ve espresso. Sonbaharın ilk serinliği, bir fincanın içinde. Sonbahar boyunca.</p>
           </div>
-          <p class="fiyat">Fiyat için sorunuz</p>
+          <p class="fiyat">Küçük 220 ₺<br>Orta 230 ₺</p>
         </li>
       </ul>
     </section>
 
     <section class="kategori" id="sicak-kahveler" aria-labelledby="sicak-baslik">
       <h2 id="sicak-baslik">Sıcak Kahveler</h2>
-      <p>Sıcak kahve menümüz hazırlanıyor. O zamana kadar tezgahta sorun ya da arayın: <a href="tel:+905527312330">0552 731 23 30</a></p>
+      <ul class="one-cikanlar" aria-label="Öne çıkanlar">
+          <li><figure>
+            <img class="kemer" src="img/menu-latte.webp" width="360" height="450" alt="Kalpli süt köpüğüyle logolu bardakta latte." loading="lazy" decoding="async">
+            <figcaption>Latte</figcaption>
+          </figure></li>
+          <li><figure>
+            <img class="kemer" src="img/menu-caramel-macchiato.webp" width="360" height="450" alt="Üstü karamel desenli caramel macchiato." loading="lazy" decoding="async">
+            <figcaption>Caramel Macchiato</figcaption>
+          </figure></li>
+          <li><figure>
+            <img class="kemer" src="img/menu-chai-tea-latte.webp" width="360" height="450" alt="Tarçın serpilmiş köpüklü chai tea latte." loading="lazy" decoding="async">
+            <figcaption>Chai Tea Latte</figcaption>
+          </figure></li>
+          <li><figure>
+            <img class="kemer" src="img/menu-americano.webp" width="360" height="450" alt="Logolu bardakta sıcak americano." loading="lazy" decoding="async">
+            <figcaption>Americano</figcaption>
+          </figure></li>
+      </ul>
+        <table class="fiyat-listesi">
+          <caption>Espresso bazlı</caption>
+          <thead><tr><th scope="col"><span class="gorunmez">Ürün</span></th><th scope="col">Küçük</th><th scope="col">Orta</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Espresso</th><td>120 ₺</td><td>130 ₺</td></tr>
+            <tr><th scope="row">Americano</th><td>170 ₺</td><td>180 ₺</td></tr>
+            <tr><th scope="row">Cappuccino</th><td>180 ₺</td><td>190 ₺</td></tr>
+            <tr><th scope="row">Latte</th><td>180 ₺</td><td>190 ₺</td></tr>
+            <tr><th scope="row">Dark Mocha</th><td>210 ₺</td><td>220 ₺</td></tr>
+            <tr><th scope="row">White Mocha</th><td>210 ₺</td><td>220 ₺</td></tr>
+            <tr><th scope="row">Caramel Macchiato</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Flat White</th><td>180 ₺</td><td>190 ₺</td></tr>
+            <tr><th scope="row">Latte Macchiato</th><td>180 ₺</td><td>190 ₺</td></tr>
+            <tr><th scope="row">Toffee Nut Latte</th><td>220 ₺</td><td>230 ₺</td></tr>
+          </tbody>
+        </table>
+        <table class="fiyat-listesi">
+          <caption>Demleme kahveler</caption>
+          <thead><tr><th scope="col"><span class="gorunmez">Ürün</span></th><th scope="col">Küçük</th><th scope="col">Orta</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Filtre Kahve</th><td>160 ₺</td><td>170 ₺</td></tr>
+            <tr><th scope="row">Türk Kahvesi</th><td>140 ₺</td><td>150 ₺</td></tr>
+            <tr><th scope="row">Dibek Kahvesi</th><td>150 ₺</td><td>160 ₺</td></tr>
+          </tbody>
+        </table>
     </section>
 
-    <section class="kategori" id="soguk-kahveler" aria-labelledby="soguk-baslik">
-      <h2 id="soguk-baslik">Soğuk Kahveler</h2>
-      <ul class="kalemler">
-        <li class="kalem">
-          <img class="kemer" src="img/menu-buzlu-latte.svg" width="120" height="150" alt="Logolu bardakta buzlu latte." loading="lazy">
-          <div class="kalem-metin">
-            <h3>Buzlu Latte</h3>
-            <p>Bol buz, soğuk süt, espresso. Sıcak bir öğleden sonranın en serin cevabı.</p>
-          </div>
-          <p class="fiyat">Fiyat için sorunuz</p>
-        </li>
-        <li class="kalem">
-          <img class="kemer" src="img/menu-buzlu-americano.svg" width="120" height="150" alt="Bardakta buzlu americano." loading="lazy">
-          <div class="kalem-metin">
-            <h3>Buzlu Americano</h3>
-            <p>Sade ve serin. Espresso ve buz; fazlası yok.</p>
-          </div>
-          <p class="fiyat">Fiyat için sorunuz</p>
-        </li>
-      </ul>
+    <section class="kategori" id="ozel-kahveler" aria-labelledby="ozel-baslik">
+      <h2 id="ozel-baslik">Özel Kahveler</h2>
+        <table class="fiyat-listesi">
+          <caption>Özel tarifler</caption>
+          <thead><tr><th scope="col"><span class="gorunmez">Ürün</span></th><th scope="col">Küçük</th><th scope="col">Orta</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Sirena</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Dark Bloom</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Scarleta</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Pink Floyd</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Pumpkin Spice</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Salted Caramel Latte</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Irish Latte</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Twin Shot</th><td>190 ₺</td><td>200 ₺</td></tr>
+          </tbody>
+        </table>
+    </section>
+
+    <section class="kategori" id="sicak-icecekler" aria-labelledby="sicak-icecek-baslik">
+      <h2 id="sicak-icecek-baslik">Sıcak İçecekler</h2>
+        <table class="fiyat-listesi">
+          <caption>Çay, çikolata ve salep</caption>
+          <thead><tr><th scope="col"><span class="gorunmez">Ürün</span></th><th scope="col">Küçük</th><th scope="col">Orta</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Çay</th><td>60 ₺</td><td>70 ₺</td></tr>
+            <tr><th scope="row">Bitki Çayı</th><td>140 ₺</td><td>150 ₺</td></tr>
+            <tr><th scope="row">Sıcak Çikolata</th><td>170 ₺</td><td>180 ₺</td></tr>
+            <tr><th scope="row">Beyaz Sıcak Çikolata</th><td>170 ₺</td><td>180 ₺</td></tr>
+            <tr><th scope="row">Salep</th><td>170 ₺</td><td>180 ₺</td></tr>
+            <tr><th scope="row">Chai Tea Latte</th><td>170 ₺</td><td>180 ₺</td></tr>
+          </tbody>
+        </table>
+    </section>
+
+    <section class="kategori" id="soguk-icecekler" aria-labelledby="soguk-baslik">
+      <h2 id="soguk-baslik">Soğuk İçecekler</h2>
+        <table class="fiyat-listesi">
+          <caption>Soğuk özel</caption>
+          <thead><tr><th scope="col"><span class="gorunmez">Ürün</span></th><th scope="col">Küçük</th><th scope="col">Orta</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Frappe</th><td>210 ₺</td><td>220 ₺</td></tr>
+            <tr><th scope="row">Milkshake</th><td>210 ₺</td><td>220 ₺</td></tr>
+            <tr><th scope="row">Frozen</th><td>210 ₺</td><td>220 ₺</td></tr>
+            <tr><th scope="row">Mojito</th><td>190 ₺</td><td>200 ₺</td></tr>
+            <tr><th scope="row">Churchill</th><td>160 ₺</td><td>170 ₺</td></tr>
+            <tr><th scope="row">Smoothie</th><td>210 ₺</td><td>220 ₺</td></tr>
+            <tr><th scope="row">Bubble Tea</th><td>210 ₺</td><td>220 ₺</td></tr>
+          </tbody>
+        </table>
+        <table class="fiyat-listesi">
+          <caption>Kokteyller</caption>
+          <thead><tr><th scope="col"><span class="gorunmez">Ürün</span></th><th scope="col">Küçük</th><th scope="col">Orta</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Rainbow</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Twilight</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Tropicano</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Redbull Cocktail</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Berry Hibiscus</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Orange Mango</th><td>220 ₺</td><td>230 ₺</td></tr>
+            <tr><th scope="row">Cool Lime</th><td>210 ₺</td><td>220 ₺</td></tr>
+          </tbody>
+        </table>
+        <table class="fiyat-listesi">
+          <caption>Meşrubat</caption>
+          <thead><tr><th scope="col"><span class="gorunmez">Ürün</span></th><th scope="col">Fiyat</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Redbull</th><td>150 ₺</td></tr>
+            <tr><th scope="row">Soda</th><td>60 ₺</td></tr>
+            <tr><th scope="row">Meyveli Soda</th><td>70 ₺</td></tr>
+            <tr><th scope="row">Su</th><td>30 ₺</td></tr>
+          </tbody>
+        </table>
     </section>
 
     <section class="kategori" id="tatlilar" aria-labelledby="tatli-baslik">
@@ -171,6 +266,20 @@
           <p class="fiyat">Fiyat için sorunuz</p>
         </li>
       </ul>
+    </section>
+
+    <section class="kategori" id="ekstralar" aria-labelledby="ekstra-baslik">
+      <h2 id="ekstra-baslik">Ekstralar</h2>
+        <table class="fiyat-listesi">
+          <caption>İçeceğinize ekleyin</caption>
+          <thead><tr><th scope="col"><span class="gorunmez">Ürün</span></th><th scope="col">Fiyat</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Şurup</th><td>20 ₺</td></tr>
+            <tr><th scope="row">Krema</th><td>20 ₺</td></tr>
+            <tr><th scope="row">Ekstra shot</th><td>20 ₺</td></tr>
+            <tr><th scope="row">Süt</th><td>20 ₺</td></tr>
+          </tbody>
+        </table>
     </section>
 
     <section class="menu-son" aria-label="Paket ve oturma">
