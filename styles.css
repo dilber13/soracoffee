@@ -1107,3 +1107,76 @@ div.harita.yuklendi { padding: 0; }
   div.harita { padding: 24px; }
   div.harita iframe { min-height: 300px; }
 }
+
+/* ==========================================================
+   15. Menü: fiyat tabloları ve öne çıkanlar
+   ========================================================== */
+.gorunmez {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.one-cikanlar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+.one-cikanlar img { width: 100%; height: auto; }
+.one-cikanlar figcaption {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.fiyat-listesi {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.kategori h2 + .fiyat-listesi,
+.one-cikanlar + .fiyat-listesi { margin-top: 40px; }
+.fiyat-listesi + .fiyat-listesi { margin-top: 56px; }
+.fiyat-listesi caption {
+  caption-side: top;
+  padding-bottom: 8px;
+  text-align: left;
+  font-size: var(--h3);
+  line-height: var(--h3-satir);
+  font-weight: 600;
+}
+.fiyat-listesi th,
+.fiyat-listesi td {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--karamel);
+  vertical-align: baseline;
+}
+.fiyat-listesi thead th {
+  padding-block: 8px;
+  border-bottom: 1.5px solid var(--espresso);
+  font-size: var(--kucuk);
+  line-height: var(--kucuk-satir);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: right;
+}
+.fiyat-listesi tbody th {
+  text-align: left;
+  font-weight: 600;
+  padding-right: 16px;
+}
+.fiyat-listesi td {
+  width: 96px;
+  text-align: right;
+  white-space: nowrap;
+}
+.sezonluk .fiyat { line-height: var(--govde-satir); }
+
+@media (max-width: 760px) {
+  .one-cikanlar { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .fiyat-listesi td { width: 64px; }
+  .fiyat-listesi tbody th { line-height: 1.35; }
+}
