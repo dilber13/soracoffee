@@ -21,7 +21,7 @@ hero ve büyük kemerler belirgin biçimde daha keskin olur.
 | menu-latte, menu-caramel-macchiato, menu-chai-tea-latte | Menü, öne çıkanlar | Instagram tanıtım görselinden bardak kırpımları |
 | menu-americano | Menü, öne çıkanlar | Instagram tanıtım görselinden bardak kırpımı |
 | yasin-nalbant-portre | Hakkımızda | Yasin Nalbant, motosiklet önünde (göğüs hizası kırpım) |
-| san-sebastian, menu-san-sebastian | Ana Sayfa, Menü | Sahibin San Sebastian fotoğrafı (çikolata soslu dilim) |
+| san-sebastian | Ana Sayfa | Sahibin San Sebastian fotoğrafı (çikolata soslu dilim) |
 | burak-eren-pancaroglu-portre | Hakkımızda | Burak Eren Pancaroğlu, kale önünde masada (yandaki kişi ve bardak kadraj dışında) |
 
 ## Hâlâ beklenenler
