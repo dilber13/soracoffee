@@ -74,8 +74,7 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
 - Menü: üstte sezonluk (Pumpkin Spice Latte) vurgusu, sonra kategoriler.
   Fiyat yerine "Fiyat için sorunuz", sağa hizalı, Figtree 400.
 - Mekan: kenardan kenara dikdörtgen bant (uzun masa) + altında 2×2 kare
-  ızgara (cam kenarı, teras, tezgah, giriş). Alt yazı yok. Bu sayfada
-  fotoğraflar bilerek kemer değil, dikdörtgen ve kare (sahibin isteği).
+  ızgara (cam kenarı, teras, tezgah, giriş). Alt yazı yok.
   Vitrin fotoğrafı sitenin hiçbir yerinde kullanılmaz.
 - Hakkımızda: kurucu ortaklar Yasin Nalbant ve Burak Eren Pancaroğlu'nun portreleri + metin. Barista alanı boş bırakılmaz;
   isimler gelene kadar bu blok yayında yok.
@@ -101,18 +100,17 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
 - Footer da espresso zemin; ikisi arasında krem bölüm olsun ki sayfa nefes alsın.
 
 ## HER ŞEY AYNI HİZADA OLMASIN
-- Hero 7/5 asimetrik: solda h1 ve butonlar, sağda kemer formlu dikey foto
+- Hero 7/5 asimetrik: solda h1 ve butonlar, sağda dikey dikdörtgen foto
   sağ kenara kadar taşar (sağ kenar boşluğunu yok sayar). h1'in son kelimesi
-  kemerin üzerine 40px biner.
+  krem zemin üzerinde fotoğrafın üzerine 40px biner.
 - Menü sayfasında kategori başlıkları (h2) içerik sütununun 64px solunda,
   kenar boşluğuna sarkar; kalemler normal sütunda.
-- Telefonda: hero fotosu tam genişlik ama kemerin tepesi h1'in altına girer.
+- Telefonda: hero fotosu tam genişlik, h1'in hemen altında.
 
-## BİLİNÇLİ TEK HAMLE — KEMER
-- Sitedeki her fotoğraf logodaki kemer formunda kesilir: üstü tam yarım daire,
-  altı düz (border-radius: 999px 999px 0 0 mantığı). Mekandaki LED'li oval
-  ayna ve logodaki pencere aynı formu taşır; site, dükkânın içi ve logo tek
-  bir şey gibi görünür. Kare/dikdörtgen foto sadece kenardan kenara şeritte.
+## FOTOĞRAF BİÇİMİ — DÜZ KENAR (sahibin kararı, Ekim 2026)
+- Sitedeki bütün fotoğraflar düz kenarlı kare ve dikdörtgenlerdir; köşe
+  yuvarlatma yok. Önceki "her fotoğraf kemer formunda" kuralı sahibin
+  isteğiyle kaldırıldı. Kemer formu yalnızca logoda yaşar.
 
 ## FOTOĞRAF (telefonla çekilecek, gün ışığında, flaşsız, HDR kapalı)
 1. Hero (dikey 4:5): cam kenarı bar, dışarıda şemsiyeli teras ve ağaçlar
@@ -128,13 +126,13 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
    "burayı arayın" fotoğrafı.
 8. Yasin Nalbant portresi: terrakota duvar önü, göğüs hizası, doğal gülüş,
    kameraya bakarak. Hakkımızda için.
-- Ele alış: hero ve Mekan büyük foto kemerli; şerit tam genişlik
-  dikdörtgen; ürünler küçük kemerli küçük resim (120×150). Tümü WebP,
+- Ele alış: hero dikey dikdörtgen; Mekan kenardan kenara bant + kareler;
+  ürünler küçük dikdörtgen resim (120×150). Tümü WebP,
   srcset ile, hero dışındakiler loading="lazy". Hero max 180KB.
 - Stok fotoğraf: hiç.
 
 ## FOTOĞRAF YOKKEN (ör. menü kalemleri)
-- Aynı kemer formu, içi düz karamel #B08656; tepeden krem renkte ince güneş
+- Düz dikdörtgen, içi düz karamel #B08656; tepeden krem renkte ince güneş
   ışınları (logodaki gibi, 12 çizgi, 1.5px). Altında Figtree 15px espresso
   alt yazı ürünün adıyla ("San Sebastian, bizim yaptığımız"). İçinde asla
   "görsel" ya da "fotoğraf" yazmaz, gri değil. Aynı yer tutucu iki tonda:
@@ -142,7 +140,7 @@ geç saate kadar açık bir kafe için doğru: gündüz ferahlığı + gece sıc
 
 ## HAREKET
 Ne hareket ediyor:
-- Hero girişi: h1 opacity 0→1 ve translateY(16px→0), 450ms; kemer fotoğraf
+- Hero girişi: h1 opacity 0→1 ve translateY(16px→0), 450ms; fotoğraf
   scale(1.04→1) + opacity, 500ms, 80ms gecikmeli. Butonlar animasyonsuz,
   hemen görünür.
 - Bölüm içeriği ekrana girince BİR kez: sadece bölüm başlığı ve ilk görsel,
