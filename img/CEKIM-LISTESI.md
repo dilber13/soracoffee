@@ -14,8 +14,7 @@ hero ve büyük kemerler belirgin biçimde daha keskin olur.
 |---|---|---|
 | hero-cam-kenari-bar | Ana Sayfa hero | Cam kenarı bar ve tabureler (dikey kırpım) |
 | mekan-cam-kenari-bar | Ana Sayfa şerit, Mekan | Cam kenarı bar ve tabureler |
-| mekan-uzun-calisma-masasi | Ana Sayfa şerit | Hardal duvar önünde uzun masa |
-| mekan-uzun-calisma-masasi-dikey | Mekan büyük kemer | Aynı masa, dikey kırpım |
+| mekan-uzun-calisma-masasi | Ana Sayfa şerit, Mekan bandı | Hardal duvar önünde uzun masa |
 | mekan-teras | Ana Sayfa şerit, Mekan | Dış cephe fotoğrafından teras kırpımı |
 | mekan-giris-tabela | Mekan, İletişim | Dış cephe fotoğrafından "Soracoffee.co" tabelası |
 | mekan-tezgah | Mekan | Tezgah, espresso makinesi, menü panosu |
