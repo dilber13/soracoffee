@@ -380,7 +380,7 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
 
 /* ---------- Ana Sayfa ---------- */
 
-/* Hero 7/5: foto sağ kenara taşar, h1'in son kelimesi kemere 40px biner */
+/* Hero 7/5: foto sağ kenara taşar, h1'in son kelimesi fotoğrafa 40px biner */
 .hero {
   padding-right: 0;
   margin-top: -16px;
@@ -521,8 +521,7 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
   font-weight: 400;
 }
 
-/* ---------- Mekan: kenardan kenara bant + 2×2 kareler, alt yazısız ----------
-   Bu sayfada fotoğraflar bilerek kemer değil, dikdörtgen ve kare. */
+/* ---------- Mekan: kenardan kenara bant + 2×2 kareler, alt yazısız ---------- */
 .mekan-galeri { padding-inline: 0; }
 .mekan-galeri img {
   display: block;
@@ -550,7 +549,7 @@ figure figcaption { margin-top: 12px; }
   gap: var(--sutun-ara);
   align-items: start;
 }
-.portreler .portre:nth-child(2) { margin-top: 64px; }  /* ikinci kemer biraz aşağıda: yan yana iki pencere */
+.portreler .portre:nth-child(2) { margin-top: 64px; }  /* ikinci portre biraz aşağıda */
 .portre img { width: 100%; }
 .hk-metin { grid-column: 7 / -1; }
 .hk-metin p + p { margin-top: 24px; }
@@ -631,32 +630,14 @@ main > .bilgi + .bilgi { margin-top: 80px; }
 .alt .durum-acik .durum-nokta { background: var(--hardal); }
 
 /* ==========================================================
-   8. Bilinçli tek hamle — KEMER
-   Her fotoğraf logodaki pencere gibi: üstü tam yarım daire, altı düz.
-   Dikdörtgen yalnızca kenardan kenara mekan şeridinde.
+   8. Fotoğraflar: düz kenarlı kare ve dikdörtgenler (sahibin isteği).
+   Kemer formu yalnızca logoda kalır.
    ========================================================== */
-.kemer img,
-img.kemer {
-  border-radius: 999px 999px 0 0;
-}
-
-/* Hero: kemerin arkasında karamel çizgiyle ikinci bir pencere çerçevesi */
-.hero-foto {
-  position: relative;
-  isolation: isolate;
-}
-.hero-foto::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border: 1.5px solid var(--karamel);
-  border-radius: 999px 999px 0 0;
-  transform: translate(-20px, -20px);
-}
+/* Giriş animasyonundaki 1,04 ölçek fotoğraf kutusundan taşmasın */
+.hero-foto { overflow: hidden; }
 .hero h1 { position: relative; z-index: 2; }
 
-/* Yatay çekilen kareler kemerde dikey kadraja oturur */
+/* Yatay çekilen kareler dikey kadraja oturur */
 .iletisim-giris img {
   width: 100%;
   aspect-ratio: 4 / 5;
@@ -761,10 +742,9 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
     transition: opacity 200ms var(--egri), transform 200ms var(--egri), visibility 0s;
   }
 
-  /* Hero girişi: h1 450ms; kemer foto 500ms, 80ms gecikmeli. Butonlar sabit. */
+  /* Hero girişi: h1 450ms; foto 500ms, 80ms gecikmeli. Butonlar sabit. */
   html.js .hero h1 { animation: yukari16 450ms var(--egri) both; }
-  html.js .hero-foto img { animation: kemer-gir 500ms var(--egri) 80ms both; }
-  html.js .hero-foto::before { animation: belir 500ms var(--egri) 80ms both; }
+  html.js .hero-foto img { animation: foto-gir 500ms var(--egri) 80ms both; }
 
   /* Bölüm başlığı ve ilk görsel ekrana girince bir kez: 350ms */
   html.js .goster {
@@ -788,11 +768,7 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: none; }
 }
-@keyframes belir {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes kemer-gir {
+@keyframes foto-gir {
   from { opacity: 0; transform: scale(1.04); }
   to { opacity: 1; transform: none; }
 }
@@ -967,7 +943,7 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .sss-sayfa,
   .alt { display: block; }
 
-  /* Hero: foto tam genişlik, kemerin tepesi h1'in altına girer */
+  /* Hero: foto tam genişlik, başlık ve metnin altında */
   .hero {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -980,9 +956,8 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .hero-foto {
     grid-column: 1;
     grid-row: 2;
-    margin: -40px calc(-1 * var(--kenar)) 0;
+    margin: 32px calc(-1 * var(--kenar)) 0;
   }
-  .hero-foto::before { transform: translateY(-14px) scale(0.94); }
   .hero-alt { grid-row: 3; margin-top: 32px; }
   .hero .butonlar { grid-row: 4; margin-top: 24px; }
 
