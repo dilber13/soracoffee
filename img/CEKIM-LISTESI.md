@@ -19,7 +19,7 @@ hero ve büyük kemerler belirgin biçimde daha keskin olur.
 | mekan-teras | Ana Sayfa şerit, Mekan | Dış cephe fotoğrafından teras kırpımı |
 | mekan-giris-tabela | Mekan, İletişim | Dış cephe fotoğrafından "Soracoffee.co" tabelası |
 | mekan-tezgah | Mekan | Tezgah, espresso makinesi, menü panosu |
-| mekan-vitrin | Mekan | Tezgah fotoğrafından vitrin kırpımı |
+| mekan-vitrin | Mekan | Tatlı vitrininin kendisi |
 | salon-aksam | Ana Sayfa 02:00 bölümü | Sıcak ışıklı salon ve LED'li oval ayna |
 | menu-latte, menu-caramel-macchiato, menu-chai-tea-latte | Menü, öne çıkanlar | Instagram tanıtım görselinden bardak kırpımları |
 | menu-americano | Menü, öne çıkanlar | Instagram tanıtım görselinden bardak kırpımı |
@@ -34,9 +34,5 @@ Telefonla, gün ışığında, flaşsız, HDR kapalı.
 |---|---|---|---|
 | san-sebastian | Ana Sayfa San Sebastian | San Sebastian dilimi, beyaz tabak, beyaz masa, 45°, doğal yan ışık. | dikey 4:5 |
 | teras-aksam (isteğe bağlı) | Ana Sayfa 02:00 bölümü | Teras, akşam / gece, ışıklar yanarken. Gelirse salon-aksam'ın yerine geçer. | dikey 4:5 |
-| mekan-vitrin (daha iyisi) | Mekan | Vitrinin kendisi, yakından: San Sebastian ve günün tatlıları. | dikey 4:5 |
 | menu-pumpkin-spice-latte | Menü | Pumpkin Spice Latte, yakın plan. | 4:5 (120×150 gösterilir) |
 | menu-san-sebastian | Menü | San Sebastian dilimi (yukarıdaki çekimden kırpılabilir). | 4:5 |
-| menu-dilim-pasta | Menü | Fıstıklı ve çikolatalı dilim pastalar. | 4:5 |
-| menu-kupta-tatli | Menü | Kupta katmanlı tatlı. | 4:5 |
-| menu-kurabiye | Menü | Kurabiye. | 4:5 |
