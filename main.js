@@ -87,7 +87,7 @@
    da 2 saniye içinde hiç tetiklenmezse her şey görünür yapılır. */
 (function () {
   var hedefler = [];
-  document.querySelectorAll('main > section:not(.hero):not(.kisa-sss):not(.sss-sayfa)').forEach(function (bolum) {
+  document.querySelectorAll('main > section:not(.hero)').forEach(function (bolum) {
     var baslik = bolum.querySelector('h2');
     var gorsel = null;
     bolum.querySelectorAll('figure').forEach(function (f) {

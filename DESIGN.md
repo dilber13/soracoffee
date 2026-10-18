@@ -195,3 +195,4 @@ Kurallar:
 ## GÜNCELLEME (sahibin kararı)
 - 02:00 bölümü ve ışın animasyonu kaldırıldı. Ters (espresso) zemin artık
   San Sebastian bölümünde; link rengi orada hardal (6,6:1).
+- Soru-cevap (SSS) bölümü ve "Tüm sorular" sayfası sahibin isteğiyle kaldırıldı.
