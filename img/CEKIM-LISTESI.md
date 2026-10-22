@@ -8,6 +8,8 @@ Gelen fotoğraflar yaklaşık 770px genişliğinde. Sitede iyi duruyorlar, ama
 telefonun kendi kaydettiği orijinal dosyalar (genelde 3000px ve üstü) gelirse
 hero ve büyük kemerler belirgin biçimde daha keskin olur.
 
+Güncelleme: mekân fotoğrafları sahibin gönderdiği kalitesi artırılmış sürümlerle (1500–2000px) değiştirildi.
+
 ## Gelenler
 
 | Dosya | Nerede | Kaynak fotoğraf |
