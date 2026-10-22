@@ -382,8 +382,6 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
   grid-row: 1;
 }
 .hero-foto img { width: 100%; }
-.hero-alt { margin-top: 32px; }
-.hero .butonlar { margin-top: 32px; }
 
 
 /* Kenardan kenara mekan şeridi */
@@ -843,8 +841,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
     grid-row: 2;
     margin: 32px calc(-1 * var(--kenar)) 0;
   }
-  .hero-alt { grid-row: 3; margin-top: 32px; }
-  .hero .butonlar { grid-row: 4; margin-top: 24px; }
 
   main { padding-top: 24px; }
 
