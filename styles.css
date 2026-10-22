@@ -385,15 +385,6 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
 .hero-alt { margin-top: 32px; }
 .hero .butonlar { margin-top: 32px; }
 
-.adres-seridi {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  column-gap: 32px;
-  row-gap: 8px;
-  margin-top: 48px;
-}
-.adres-seridi p { max-width: none; }
 
 /* Kenardan kenara mekan şeridi */
 .mekan-seridi {
@@ -436,14 +427,12 @@ main { padding-top: 64px; padding-bottom: var(--bolum); }
 .mekan-giris p { margin-top: 32px; }
 
 .menu-giris,
-.kategori,
-.menu-son {
+.kategori {
   --menu-sutun: 880px;
   padding-inline: max(calc(var(--kenar) + var(--sarkma)), calc((100% - var(--menu-sutun)) / 2));
 }
 .kategori h2 { margin-left: calc(-1 * var(--sarkma)); }
 .kategori h2 + * { margin-top: 40px; }
-.menu-son { margin-top: 96px; }
 
 .kalemler > li + li { margin-top: 40px; }
 .kalem {
@@ -858,7 +847,6 @@ main:has(> .bant:last-child) { padding-bottom: 0; }
   .hero .butonlar { grid-row: 4; margin-top: 24px; }
 
   main { padding-top: 24px; }
-  .adres-seridi { margin-top: 32px; }
 
   /* Mekan şeridi: dokunmayla yatay kaydırılır, otomatik oynamaz */
   .mekan-seridi {
